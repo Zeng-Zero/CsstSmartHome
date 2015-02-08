@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 摄像机列表项 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="left|center_vertical"
+    android:orientation="horizontal" >
+    <!-- 最后一帧 -->
+    <ImageView 
+        android:id="@+id/mIVLastFrame"
+        android:layout_width="80dip"
+        android:layout_height="80dip"
+        android:src="@drawable/csst_preset_030"
+        android:contentDescription="@null" />
+	<LinearLayout
+		android:layout_width="0dip"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		android:orientation="vertical"
+		android:gravity="left"
+		android:layout_marginLeft="10dip"
+	>
+	    <TextView 
+	        android:id="@+id/mTVCameraName"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:textSize="18sp"
+	        android:textColor="@android:color/black"
+	        android:textStyle="bold"
+	        android:gravity="left|center_vertical" />
+	    <TextView 
+	        android:id="@+id/mTVCameraUuid"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:textSize="14sp"
+	        android:textColor="@android:color/black"
+	        android:textStyle="bold"
+	        android:gravity="left|center_vertical" />
+	    <TextView 
+	        android:id="@+id/mTVCameraState"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:textSize="14sp"
+	        android:textColor="@android:color/black"
+	        android:gravity="left|center_vertical" />
+	</LinearLayout>
+</LinearLayout>

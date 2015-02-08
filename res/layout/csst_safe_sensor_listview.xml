@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 	
+	添加定时界面
+ -->
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/addModelcontent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:background="@color/currentbackground"
+    >
+	<!-- 定时名称-->
+	<LinearLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:id="@+id/llnamemain"
+	    android:orientation="horizontal"
+	    android:gravity="center"
+	    android:background="@color/currentlistview"
+	    >
+ <!-- 名称输入标签 -->
+	<TextView 
+	    android:layout_height="fill_parent"
+	    android:layout_width="wrap_content"
+	    android:id="@+id/tvsafesensorname"
+	    android:text="@string/csst_model_actionlocal"
+	    android:gravity="center"
+	    android:singleLine="true"
+	    android:textColor="@color/white"
+	    android:textSize="@dimen/round_btn_textsize"
+	    android:layout_weight="1"
+	    />
+	 <ImageView android:id="@+id/imgsafebattery"
+            android:layout_width="wrap_content"
+            android:layout_height="28sp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/safesensor_been_on" />
+    <Button 
+     	android:layout_height="30sp"
+	    android:layout_width="55sp"
+        android:id="@+id/btnsafeselect"
+        android:focusable="false"
+        android:clickable="false"
+        android:background="@drawable/switch_on_safe"
+        android:duplicateParentState="true"
+		android:layout_weight="1"
+        android:layout_gravity="center"
+        android:button="@null" />
+    
+	</LinearLayout>
+	
+	
+</LinearLayout>

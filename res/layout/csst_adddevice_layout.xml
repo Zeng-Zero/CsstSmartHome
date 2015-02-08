@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 	
+	添加设备界面
+ -->
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/addDeviceContent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black" >
+	<!-- 标题栏 -->
+	<RelativeLayout 
+		android:id="@+id/layout_top"
+		android:layout_width="fill_parent"
+	    android:layout_height="50.0dip"
+	    android:layout_alignParentTop="true"
+	    android:layout_centerHorizontal="true" >
+	    <include layout="@layout/csst_title_layout"/>
+	</RelativeLayout>
+	<!-- 设备管理操作 -->
+	<LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" 
+        android:layout_below="@id/layout_top"
+        android:orientation="vertical"
+		android:layout_alignParentBottom="true"
+		android:overScrollMode="ifContentScrolls" >
+		<!-- 设备头像 -->
+		<LinearLayout
+			android:layout_width="fill_parent"
+      		android:layout_height="wrap_content" 
+      		android:layout_weight="1"
+      		android:orientation="vertical"
+      		android:gravity="center"
+      		android:background="@drawable/csst_adddevice_item_btn_bg"
+      		android:layout_marginLeft="10dip"
+      		android:layout_marginRight="10dip"
+      		android:layout_marginTop="10dip"
+      		android:layout_marginBottom="5dip" >
+    		<ImageView 
+		    	android:id="@+id/mDeviceIcon"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/csst_adddevice_def_icon"
+				android:contentDescription="@null"
+				android:paddingTop="5dip"
+				android:paddingBottom="5dip" />
+		</LinearLayout>
+		<!-- 设备名称 -->
+        <LinearLayout
+        	android:layout_width="fill_parent"
+	        android:layout_height="wrap_content" 
+	        android:layout_weight="1"
+	        android:orientation="horizontal"
+	        android:gravity="center"
+	        android:background="@drawable/csst_adddevice_item_btn_bg"
+	        android:layout_marginLeft="10dip"
+	        android:layout_marginRight="10dip"
+	        android:layout_marginTop="5dip"
+	        android:layout_marginBottom="5dip"
+	        android:paddingTop="10dip"
+	        android:paddingBottom="10dip" >
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:paddingTop="5dip"
+				android:paddingBottom="5dip"
+				android:text="@string/csst_device_name"
+				android:textSize="16sp"
+				android:textColor="@android:color/black"
+				android:layout_marginLeft="10dip" />
+			<EditText 
+			    android:id="@+id/mDeviceName"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:background="@drawable/csst_edittext_bg"
+			    android:textColor="#000000"
+			    android:maxLength="12"
+			    android:inputType="textPostalAddress"
+			    android:imeOptions="actionDone"
+			    android:layout_marginRight="10dip"
+			    android:paddingTop="8dip"
+        		android:paddingBottom="8dip" />
+		</LinearLayout>
+		<!-- 遥控器样板 -->
+        <LinearLayout
+        	android:layout_width="fill_parent"
+	        android:layout_height="wrap_content" 
+	        android:layout_weight="1"
+        	android:orientation="horizontal"
+        	android:gravity="center"
+        	android:background="@drawable/csst_adddevice_item_btn_bg"
+        	android:layout_marginLeft="10dip"
+        	android:layout_marginRight="10dip"
+        	android:layout_marginTop="5dip"
+        	android:layout_marginBottom="5dip"
+        	android:paddingTop="10dip"
+        	android:paddingBottom="10dip" >
+			<TextView 
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:paddingTop="5dip"
+				android:paddingBottom="5dip"
+				android:text="@string/csst_device_rct"
+				android:textSize="16sp"
+				android:textColor="@android:color/black"
+				android:layout_marginLeft="10dip" />
+			<Spinner 
+				android:id="@+id/mDeviceRControl"
+				android:layout_width="match_parent"
+				android:layout_height="50dp"
+				android:layout_marginRight="10dip"
+				android:layout_gravity="center" />
+		</LinearLayout>
+		<!-- 绑定id -->
+        <LinearLayout
+        	android:layout_width="match_parent"
+       		android:layout_height="wrap_content" 
+       		android:layout_weight="1"
+       		android:orientation="vertical"
+       		android:gravity="top|center_horizontal"
+       		android:background="@drawable/csst_adddevice_item_btn_bg"
+       		android:layout_marginLeft="10dip"
+       		android:layout_marginRight="10dip"
+       		android:layout_marginTop="5dip"
+       		android:layout_marginBottom="10dip"
+       		android:paddingTop="10dip"
+       		android:paddingBottom="10dip" >
+			<EditText
+				android:id="@+id/mDeviceId"
+		    	android:layout_width="match_parent"
+		    	android:layout_height="60dp"
+		    	android:layout_margin="10dp"
+		    	android:hint="@string/csst_device_bindid" />
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+			>
+			    <Button
+				    android:id="@+id/mScanId"
+				    android:layout_width="0dip"
+				    android:layout_height="wrap_content"
+				    android:layout_weight="1"
+				    android:layout_marginLeft="10dip"
+				    android:layout_marginRight="10dip"
+				    android:background="@drawable/csst_button_black"
+				    android:paddingBottom="10dip"
+				    android:paddingTop="10dip"
+				    android:text="@string/csst_device_scan"
+				    android:textColor="@android:color/white"
+				    android:textSize="16sp" />
+			    <Button
+				    android:id="@+id/mSerchId"
+				    android:layout_width="0dip"
+				    android:layout_height="wrap_content"
+				    android:layout_weight="1"
+				    android:layout_marginLeft="10dip"
+				    android:layout_marginRight="10dip"
+				    android:background="@drawable/csst_button_black"
+				    android:paddingBottom="10dip"
+				    android:paddingTop="10dip"
+				    android:text="@string/csst_device_search"
+				    android:textColor="@android:color/white"
+				    android:textSize="16sp" />
+			</LinearLayout>
+		</LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

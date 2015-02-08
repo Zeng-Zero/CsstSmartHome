@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_background_color"
+    tools:context=".MainActivity" >
+
+    <include
+        android:id="@+id/include1"
+        layout="@layout/custom_title_layout" />
+
+
+
+    <Button
+        android:id="@+id/doublePanelSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/include1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:onClick="onClickPanelSwitch"
+        android:text="二位面板开关" />
+
+    <Button
+        android:id="@+id/triplePanelSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/doublePanelSwitch"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:onClick="onClickTriPanelSwitch"
+        android:text="三位面板开关" />
+
+    <Button
+        android:id="@+id/curtainSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/triplePanelSwitch"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:onClick="onClickCurtainPanelSwitch"
+        android:text="窗帘开关" />
+
+</RelativeLayout>

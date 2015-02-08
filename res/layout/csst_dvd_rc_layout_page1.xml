@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 第一页 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <!-- 静音、电源 -->
+    <RelativeLayout
+        android:id="@+id/layout_01"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dip"
+        android:layout_marginTop="10dip" >
+
+        <!-- 静音 -->
+        <Button
+            android:id="@+id/mBtnMute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dip"
+            android:background="@drawable/csst_tv_mute_btn_bg"
+            android:textColor="@color/white" />
+        <!-- 电源 -->
+        <Button
+            android:id="@+id/mBtnPower"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/mBtnMute"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dip"
+            android:background="@drawable/csst_tv_power_btn_bg"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/layout_02"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        android:layout_below="@id/layout_01"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dip"
+        android:layout_marginTop="10dip" >
+        <!-- 左声道、右声道、立体声、画面 -->
+		<LinearLayout 
+		    android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:orientation="horizontal"
+        	android:layout_margin="10dip">
+	        <Button
+	            android:id="@+id/mBtnLtrack"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/csst_tv_btn_def_bg"
+	            android:text="@string/csst_dvdrc_leftaudio_key"
+	            android:textColor="@color/white"
+	            android:layout_weight="1" />
+	        <Button
+	            android:id="@+id/mBtnRtrack"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/csst_tv_btn_def_bg"
+	            android:text="@string/csst_dvdrc_rightaudio_key"
+	            android:textColor="@color/white" 
+	            android:layout_weight="1"/>
+	        <Button
+	            android:id="@+id/mBtnStereo"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/csst_tv_btn_def_bg"
+	            android:text="@string/csst_dvdrc_audio_key"
+	            android:textColor="@color/white"
+	            android:layout_weight="1" />
+	        <Button
+	            android:id="@+id/mBtnImage"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/csst_tv_btn_def_bg"
+	            android:text="@string/csst_dvdrc_img_key"
+	            android:textColor="@color/white"
+	            android:layout_weight="1" />
+        </LinearLayout>
+        <!-- 播放、暂停、停止、回放 -->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip"
+            android:orientation="horizontal" >
+            <Button
+                android:id="@+id/mBtnPlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/csst_tv_btn_def_bg"
+                android:text="@string/csst_dvdrc_play_key"
+                android:textColor="@color/white" />
+            <Button
+                android:id="@+id/mBtnPause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/csst_tv_btn_def_bg"
+                android:text="@string/csst_dvdrc_pause_key"
+                android:textColor="@color/white" />
+            <Button
+                android:id="@+id/mBtnStop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/csst_tv_btn_def_bg"
+                android:text="@string/csst_dvdrc_stop_key"
+                android:textColor="@color/white" />
+            <Button
+                android:id="@+id/mBtnRplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/csst_tv_btn_def_bg"
+                android:text="@string/csst_dvdrc_replay_key"
+                android:textColor="@color/white" />
+        </LinearLayout>
+		<!-- 上一首、快退、快进、下一首 -->
+		<LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip"
+            android:orientation="horizontal" >
+            <Button
+                android:id="@+id/mBtnPrev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/csst_tv_btn_def_bg"
+                android:text="@string/csst_dvdrc_last_key"
+                android:textColor="@color/white" />
+            <Button
+                android:id="@+id/mBtnReverse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/csst_tv_btn_def_bg"
+                android:text="@string/csst_dvdrc_rev_key"
+                android:textColor="@color/white" />
+            <Button
+                android:id="@+id/mBtnForward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/csst_tv_btn_def_bg"
+                android:text="@string/csst_dvdrc_fwd_key"
+                android:textColor="@color/white" />
+            <Button
+                android:id="@+id/mBtnNext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/csst_tv_btn_def_bg"
+                android:text="@string/csst_dvdrc_next_key"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+    <!-- 音量、频道切换 -->
+    <RelativeLayout
+        android:id="@+id/layout_05"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/layout_02"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dip"
+        android:layout_marginTop="5dip"
+        android:gravity="center" >
+        <com.csst.smarthome.widget.CsstCircleView
+            android:id="@+id/layout_vol_ch"
+            android:layout_width="200dip"
+            android:layout_height="200dip"
+            android:layout_centerInParent="true" />
+        <!-- 目录:左上 -->
+        <Button
+            android:id="@+id/mBtnMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/layout_vol_ch"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15dip"
+            android:layout_marginRight="-30dip"
+            android:layout_toLeftOf="@id/layout_vol_ch"
+            android:background="@drawable/csst_tv_menu_btn_bg"
+            android:paddingBottom="8dip"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:paddingTop="8dip"
+            android:text="@string/csst_dvdrc_menu_key"
+            android:textColor="@color/white" />
+        <!-- 弹出:右上 -->
+        <Button
+            android:id="@+id/mBtnPopOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/layout_vol_ch"
+            android:layout_alignBaseline="@id/mBtnMenu"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="-30dip"
+            android:layout_marginRight="15dip"
+            android:layout_toRightOf="@id/layout_vol_ch"
+            android:background="@drawable/csst_tv_exit_btn_bg"
+            android:paddingBottom="8dip"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:paddingTop="8dip"
+            android:text="@string/csst_dvdrc_popup_key"
+            android:textColor="@color/white" />
+        <!-- 返回:左下 -->
+        <Button
+            android:id="@+id/mBtnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/layout_vol_ch"
+            android:layout_marginLeft="15dip"
+            android:layout_marginRight="-30dip"
+            android:layout_toLeftOf="@id/layout_vol_ch"
+            android:background="@drawable/csst_tv_epg_btn_bg"
+            android:paddingBottom="8dip"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:paddingTop="8dip"
+            android:text="@string/csst_stbrc_back_key"
+            android:textColor="@color/white" />
+        <!-- 退出:右下 -->
+        <Button
+            android:id="@+id/mBtnExit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/mBtnBack"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/layout_vol_ch"
+            android:layout_marginLeft="-30dip"
+            android:layout_marginRight="15dip"
+            android:layout_toRightOf="@id/layout_vol_ch"
+            android:background="@drawable/csst_tv_fav_btn_bg"
+            android:paddingBottom="8dip"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:paddingTop="8dip"
+            android:text="@string/csst_stbrc_exit_key"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+</RelativeLayout>

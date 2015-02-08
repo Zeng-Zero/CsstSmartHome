@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_background_color"
+    android:orientation="vertical" >
+
+
+
+    <LinearLayout
+        android:id="@+id/airConInfoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="168dp"
+        android:layout_margin="10dp"
+        android:background="@color/air_condition_info_bkg_color"
+        android:baselineAligned="false"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/firstColumn"
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="模式"
+                android:textColor="@color/air_condition_info_text_color"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/refrigeration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:drawablePadding="5dp"
+                android:drawableRight="@drawable/refrigeration"
+                android:text="制冷"
+                android:textColor="@color/air_condition_info_text_color"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/heat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:drawablePadding="5dp"
+                android:drawableRight="@drawable/heat"
+                android:text="制热"
+                android:textColor="@color/air_condition_info_text_color"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/dehumidification "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:drawablePadding="5dp"
+                android:drawableRight="@drawable/dehumidification"
+                android:text="抽湿"
+                android:textColor="@color/air_condition_info_text_color"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/ventilation "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:drawablePadding="5dp"
+                android:drawableRight="@drawable/ventilation"
+                android:text="通风"
+                android:textColor="@color/air_condition_info_text_color"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/secondColumn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="设定温度"
+                android:textColor="@color/air_condition_info_text_color"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/currentTemperature"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:text="25℃"
+                android:textColor="@color/air_condition_info_text_color"
+                android:textSize="50sp" />
+
+            <TextView
+                android:id="@+id/wind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:drawablePadding="20dp"
+                android:drawableRight="@drawable/wind"
+                android:text="风量"
+                android:textColor="@color/air_condition_info_text_color"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/thirdColumn"
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/leftToRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:drawableBottom="@drawable/left_to_right"
+                android:drawablePadding="5dp"
+                android:text="左右摇"
+                android:textColor="@color/air_condition_info_text_color"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/topToBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:drawableBottom="@drawable/top_to_bottom"
+                android:drawablePadding="5dp"
+                android:text="上下摇"
+                android:textColor="@color/air_condition_info_text_color"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mainBtnsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:id="@+id/mainLeftLayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <ImageButton
+                android:id="@+id/btnTopToBottom"
+                android:layout_width="@dimen/small_round_btn_size"
+                android:layout_height="@dimen/small_round_btn_size"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="30dp"
+                android:scaleType="fitXY"
+                android:background="@drawable/blue_round_background"
+                android:src="@drawable/top_to_bottom_white" />
+
+            <ImageButton
+                android:id="@+id/btnLeftToRight"
+                android:layout_width="@dimen/small_round_btn_size"
+                android:layout_height="@dimen/small_round_btn_size"
+                android:layout_centerInParent="true"
+                android:scaleType="fitXY"
+                android:background="@drawable/blue_round_background"
+                android:src="@drawable/left_to_right_white" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/mainMiddleLayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <RelativeLayout
+                android:id="@+id/temperatureLayout"
+                android:layout_width="@dimen/up_down_two_btns_layout_width"
+                android:layout_height="@dimen/up_down_two_btns_layout_height"
+                android:layout_centerInParent="true"
+                android:background="@drawable/two_vertical_bkg" >
+
+                <ImageButton
+                    android:id="@+id/btnIncreaseTemperature"
+                    android:layout_width="@dimen/small_round_btn_size"
+                    android:layout_height="@dimen/small_round_btn_size"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/blue_round_background"
+                    android:src="@drawable/increase_icon" />
+                
+                <ImageButton
+                    android:id="@+id/btnReduceTemperature"
+                    android:layout_width="@dimen/small_round_btn_size"
+                    android:layout_height="@dimen/small_round_btn_size"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/blue_round_background"
+                    android:src="@drawable/decrease" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/mainRigthLayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/btnMode"
+                android:layout_width="@dimen/small_round_btn_size"
+                android:layout_height="@dimen/small_round_btn_size"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/blue_round_background"
+                android:src="@drawable/top_to_bottom_white"
+                android:text="模式"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/btnPower"
+                android:layout_width="@dimen/small_round_btn_size"
+                android:layout_height="@dimen/small_round_btn_size"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:background="@android:color/transparent"
+                android:scaleType="fitXY"
+                android:src="@drawable/power_switch" />
+
+            <Button
+                android:id="@+id/btnWind"
+                android:layout_width="@dimen/small_round_btn_size"
+                android:layout_height="@dimen/small_round_btn_size"
+                android:layout_centerInParent="true"
+                android:background="@drawable/blue_round_background"
+                android:src="@drawable/left_to_right_white"
+                android:text="风量"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:orientation="vertical"
+    android:background="@drawable/title_background" >
+    
+    <LinearLayout 
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:gravity="left"
+        android:id="@+id/back_btn"
+        >
+   <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_gravity="left"
+        android:gravity="center"
+       	android:textSize="20sp"
+        android:paddingLeft="16dp"
+        android:textColor="@android:color/white"
+        android:text="@string/csst_back"
+       />
+    </LinearLayout>
+    
+    <TextView 
+        android:id="@+id/title_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="Custom Title"/>
+
+</RelativeLayout>

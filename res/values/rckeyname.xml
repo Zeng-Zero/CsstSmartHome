@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 电视遥控器名字 -->
+    <string name="tv_power_rckey">开关</string>
+    <string name="tv_mute_rckey">静音</string>
+    <string name="tv_signal_rckey">信号源</string>
+    <string name="tv_sound_rckey">声音</string>
+    <string name="tv_add_rckey">加</string>
+    <string name="tv_dec_rckey">减</string>
+    <string name="tv_image_rckey">图像</string>
+    <string name="tv_menu_rckey">MENU</string>
+    <string name="tv_fav_rckey">FAV</string>
+    <string name="tv_chadd_rckey">CH+</string>
+    <string name="tv_chdel_rckey">CH-</string>
+    <string name="tv_voladd_rckey">VOL+</string>
+    <string name="tv_voldel_rckey">VOL-</string>
+    <string name="tv_ok_rckey">OK</string>
+    <string name="tv_epg_rckey">EPG</string>
+    <string name="tv_stop_rckey">STOP</string>
+    <string name="tv_exit_rckey">EXIT</string>
+    <!-- 空调遥控器按键AirCondition -->
+    <string name="ac_power_rckey">开关</string>
+   	<string name="ac_addt_rckey">升温</string>     
+    <string name="ac_delt_rckey">降温</string> 
+    <string name="ac_wind_rckey">风速</string>  
+    <string name="ac_cold_rckey">制冷</string>  
+    <string name="ac_mode_rckey">模式</string>  
+    <string name="ac_hot_rckey">制热</string>
+    <string name="ac_lrwind_rckey">左右风</string>
+    <string name="ac_tbwind_rckey">上下风</string>
+    
+    <!-- 机顶盒 -->
+    <string name="stb_fr_rckey">快退</string>
+    <string name="stb_stop_rckey">停止</string>
+    <string name="stb_ff_rckey">快进</string>
+    
+    <!-- 灯光遥控器名字 -->
+    <string name="light_power_rckey">开关</string>
+</resources>

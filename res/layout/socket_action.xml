@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/blue_background_color" >
+    <include 
+        android:id="@+id/title_layout"
+        layout="@layout/custom_title_layout"/>
+    
+    <RelativeLayout 
+        android:id="@+id/all_switch_layout"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/content_margin_to_title"
+        android:layout_height="wrap_content">
+        
+        <Button android:id="@+id/allOnBtn"
+            android:layout_width="@dimen/round_btn_size"
+            android:layout_height="@dimen/round_btn_size"
+            android:layout_marginLeft="@dimen/round_btn_margin"
+            android:layout_centerVertical="true"
+            android:text="@string/csst_action_on"
+            android:textSize="@dimen/round_btn_textsize"
+            android:textColor="@android:color/white"
+            android:background="@drawable/green_round_back"/>
+
+        <Button android:id="@+id/allOffBtn"
+            android:layout_width="@dimen/round_btn_size"
+            android:layout_height="@dimen/round_btn_size"
+            android:layout_marginRight="@dimen/round_btn_margin"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/csst_action_off"
+            android:textSize="@dimen/round_btn_textsize"
+            android:textColor="@android:color/white"
+            android:background="@drawable/black_round_background"/>
+    </RelativeLayout>
+</LinearLayout>

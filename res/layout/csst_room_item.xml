@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioButton 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mRBRoom"
+    android:layout_width="wrap_content"
+    android:layout_height="50dp"
+    android:background="@drawable/csst_checkbutton_csst"
+    android:button="@null"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip"
+    android:paddingTop="10dip"
+    android:paddingBottom="1dip"
+    android:singleLine="true"
+    android:gravity="center"
+    android:textColor="@color/white" />

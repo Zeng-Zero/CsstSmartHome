@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 	
+	添加定时界面
+ -->
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/addModelcontent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@color/currentbackground"
+    >
+    <LinearLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:id="@+id/llname"
+	    android:orientation="horizontal"
+	    android:background="@color/currentlistview"
+	    android:layout_margin="4sp"
+	    >
+	<!-- 定时名称-->
+	<LinearLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:id="@+id/llnamemain"
+	    android:orientation="vertical"
+	    android:layout_weight="1"
+	    android:background="@color/currentlistview"
+	    >
+ <!-- 名称输入标签 -->
+	<TextView 
+	    android:layout_height="wrap_content"
+	    android:layout_width="fill_parent"
+	    android:id="@+id/tvclocktime_listview"
+	    android:layout_gravity="center_horizontal"
+	    android:text="@string/csst_model_actiondelaytime"
+	    android:paddingLeft="5dp"
+	    android:singleLine="true"
+	    android:gravity="left"
+	    android:textColor="@color/white"
+	    android:layout_weight="1"
+	    android:textSize="@dimen/normal_textsize"
+	    />
+	
+ <!-- 名称输入标签 -->
+	<TextView 
+	    android:layout_height="wrap_content"
+	    android:layout_width="fill_parent"
+	    android:id="@+id/tvclockrepeat_listview"
+	    android:layout_gravity="center_horizontal"
+	    android:text="@string/csst_model_actionlocal"
+   	    android:paddingLeft="5dp"
+	    android:singleLine="true"
+	    android:layout_weight="1"
+	    android:gravity="left"
+	    android:textColor="@color/white"
+	    android:textSize="@dimen/text_title_size"
+	    />
+	</LinearLayout>
+	<LinearLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:id="@+id/llbutton"
+	    android:orientation="vertical"
+	    android:layout_weight="3"
+	    android:gravity="center_vertical"
+	    android:focusable= "false" 
+	    android:background="@color/currentlistview"
+	    >
+    <CheckBox 
+        android:id="@+id/btnswitch"
+        android:focusable="false"
+        android:clickable="false"
+        android:background="@drawable/alarmpower_selector"
+        android:duplicateParentState="true"
+  		android:layout_height="25sp"
+	    android:layout_width="25sp"
+        android:layout_gravity="center"
+        android:button="@null" />
+     <ImageView android:id="@+id/bar_onoff"
+            android:layout_width="25sp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="4dip"
+            android:src="@drawable/ic_indicator_off" />
+	</LinearLayout>
+	</LinearLayout>
+	
+	
+</LinearLayout>

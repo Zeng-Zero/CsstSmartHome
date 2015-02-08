@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+	遥控器圆形按钮
+	@author liuyang
+ -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:layout_width="@dimen/rc_circle_width"
+    android:layout_height="@dimen/rc_circle_height" >
+    <!-- 中间 -->
+    <ImageButton
+        android:id="@+id/mBtnMiddle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/csst_tv_center_btn_bg"
+        android:contentDescription="@null" />
+    <!-- 左 -->
+    <ImageButton
+        android:id="@+id/mBtnLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/mBtnMiddle"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/rc_circle_margin"
+        android:layout_alignBaseline="@id/mBtnMiddle"
+        android:background="@drawable/csst_tv_left_btn_bg"
+        android:contentDescription="@null" />
+    <!-- 右 -->
+    <ImageButton
+        android:id="@+id/mBtnRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/mBtnMiddle"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/rc_circle_margin"
+        android:layout_alignBaseline="@id/mBtnMiddle"
+        android:background="@drawable/csst_tv_right_btn_bg"
+        android:contentDescription="@null" />
+    <!-- 上 -->
+    <ImageButton
+        android:id="@+id/mBtnTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/mBtnMiddle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/rc_circle_margin"
+        android:layout_alignBaseline="@id/mBtnMiddle"
+        android:background="@drawable/csst_tv_top_btn_bg"
+        android:contentDescription="@null" />
+    <!-- 下 -->
+    <ImageButton
+        android:id="@+id/mBtnBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mBtnMiddle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/rc_circle_margin"
+        android:layout_alignBaseline="@id/mBtnMiddle"
+        android:background="@drawable/csst_tv_bottom_btn_bg"
+        android:contentDescription="@null" />
+</RelativeLayout>

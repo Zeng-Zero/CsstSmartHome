@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="alerm_motion_alarm">移动侦测报警</string>
+    <string name="alerm_gpio_alarm">IO联动报警</string>
+    <string name="main_show_back">再按一次，退出程序！</string>
+    <string name="exit_lable">退出</string>
+    <string name="exit_alert">确认退出吗 ?</string>
+    
+    <!-- 播放界面 -->
+	<string name="stopplay_alert">结束播放?</string>
+	<string name="camera_type_mjpeg">MJPEG</string>
+	<string name="camera_type_h264">H.264</string>
+	<string name="h264_main_stream">H.264主码流</string>
+	<string name="h264_sub_stream">H.264次码流</string>
+	<string name="mjpeg_sub_stream">MJPEG码流</string>
+	<string name="mjpeg_h264_stream">H.264码流</string>
+	<string name="choose_stream">选择码流</string>
+	<string name="p2p_view_time_out">已到观看时间</string>
+	<string name="p2p_relay_mode_time_out">转发模式观看,剩余时间:</string>
+	<string name="str_second">秒</string>
+	<string name="ptz_takepic_ok">拍照成功</string>
+	<string name="ptz_takepic_fail">拍照失败</string>
+	<string name="ptz_default_vedio_params">视频参数恢复默认值</string>
+	<string name="ptz_control">请按菜单键,进行云台控制</string>
+	<string name="ptz_takepic_save_fail">该设备没有SDCard,照片保存失败</string>
+	<string name="ptz_takevideo_begin">开始录像</string>
+	<string name="ptz_takevideo_end">录像结束</string>
+</resources>

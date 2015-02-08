@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 	
+	添加定时界面
+ -->
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/modelrunmain_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:background="@color/popbackground"
+    android:theme="@style/Transparent"
+    
+    >
+		<ListView
+        android:id="@+id/lv_modelrunmainlistview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0"
+        android:cacheColorHint="#00000000"  
+        >
+    </ListView>
+</LinearLayout>

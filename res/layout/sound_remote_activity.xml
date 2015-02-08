@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_background_color"
+    android:orientation="vertical" >
+
+
+    <RelativeLayout
+        android:id="@+id/firstRowBtns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" >
+
+        <ImageButton
+            android:id="@+id/powerBtn"
+            android:layout_width="@dimen/small_round_btn_size"
+            android:layout_height="@dimen/small_round_btn_size"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/small_round_btn_margin"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/power_switch" />
+
+        <Button
+            android:id="@+id/ninesDotsBtn"
+            android:layout_width="@dimen/small_round_btn_size"
+            android:layout_height="@dimen/small_round_btn_size"
+            android:layout_centerInParent="true"
+            android:text="声道"
+            android:textColor="@android:color/white"
+            android:background="@drawable/blue_round_background"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/muteBtn"
+            android:layout_width="@dimen/small_round_btn_size"
+            android:layout_height="@dimen/small_round_btn_size"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/small_round_btn_margin"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/mute" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/secondRowBtns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" >
+
+        <ImageButton
+            android:id="@+id/previewBtn"
+            android:layout_width="@dimen/small_round_btn_size"
+            android:layout_height="@dimen/small_round_btn_size"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/small_round_btn_margin"
+            android:background="@drawable/blue_round_background"
+            android:scaleType="fitXY"
+            android:src="@drawable/previous" />
+
+        <ImageButton
+            android:id="@+id/stopBtn"
+            android:layout_width="@dimen/small_round_btn_size"
+            android:layout_height="@dimen/small_round_btn_size"
+            android:layout_centerInParent="true"
+            android:background="@drawable/blue_round_background"
+            android:src="@drawable/stop_icon" />
+
+        <ImageButton
+            android:id="@+id/nextBtn"
+            android:layout_width="@dimen/small_round_btn_size"
+            android:layout_height="@dimen/small_round_btn_size"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/small_round_btn_margin"
+            android:background="@drawable/blue_round_background"
+            android:scaleType="fitXY"
+            android:src="@drawable/next" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/thirdRowBtns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" >
+
+        <ImageButton
+            android:id="@+id/rewindBtn"
+            android:layout_width="@dimen/small_round_btn_size"
+            android:layout_height="@dimen/small_round_btn_size"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/small_round_btn_margin"
+            android:background="@drawable/blue_round_background"
+            android:scaleType="fitXY"
+            android:src="@drawable/rewind_icon" />
+
+        <ImageButton
+            android:id="@+id/playPauseBtn"
+            android:layout_width="@dimen/small_round_btn_size"
+            android:layout_height="@dimen/small_round_btn_size"
+            android:layout_centerInParent="true"
+            android:background="@drawable/blue_round_background"
+            android:scaleType="fitXY"
+            android:src="@drawable/play_pause" />
+
+        <ImageButton
+            android:id="@+id/fastForwardBtn"
+            android:layout_width="@dimen/small_round_btn_size"
+            android:layout_height="@dimen/small_round_btn_size"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/small_round_btn_margin"
+            android:background="@drawable/blue_round_background"
+            android:scaleType="fitXY"
+            android:src="@drawable/fast_forward" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:id="@+id/directions_layout"
+            android:layout_width="@dimen/direct_pad_width"
+            android:layout_height="@dimen/direct_pad_height"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-10dp" >
+
+            <Button
+                android:id="@+id/centerOKBtn"
+                android:layout_width="@dimen/center_ok_btn_size"
+                android:layout_height="@dimen/center_ok_btn_size"
+                android:layout_centerInParent="true"
+                android:background="@drawable/center_ok"
+                android:text="OK"
+                android:textColor="@android:color/white"
+                android:textSize="40sp" />
+
+            <ImageButton
+                android:id="@+id/aboveBtn"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/above_ok" />
+
+            <ImageButton
+                android:id="@+id/belowBtn"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="4dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/below_ok" />
+
+            <ImageButton
+                android:id="@+id/leftBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="130dp"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/left_ok" />
+
+            <ImageButton
+                android:id="@+id/rightBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="130dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/right_ok" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/settingsBtn"
+            android:layout_width="@dimen/small_round_btn_size"
+            android:layout_height="@dimen/small_round_btn_size"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="@dimen/small_round_btn_margin"
+            android:background="@drawable/blue_round_background"
+            android:text="设置"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="@dimen/small_round_btn_size"
+            android:layout_height="@dimen/small_round_btn_size"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="@dimen/small_round_btn_margin"
+            android:background="@drawable/blue_round_background"
+            android:src="@drawable/back_icon"
+            android:textColor="@android:color/white" />
+        
+        <ImageButton
+            android:id="@+id/nineDotsBtn"
+            android:layout_width="@dimen/small_round_btn_size"
+            android:layout_height="@dimen/small_round_btn_size"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/blue_round_background"
+            android:src="@drawable/nine_dot"
+            android:textColor="@android:color/white" />
+        
+        
+        
+        <ImageButton 
+            android:id="@+id/leftDecreaseBtn"
+            android:layout_width="44dp"
+            android:layout_height="160dp"
+            android:background="@drawable/left_decrease"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/minus_symbol"
+            android:scaleType="centerInside"
+            android:paddingRight="10dp"
+            android:layout_marginLeft="@dimen/small_round_btn_margin"
+            />
+        
+        <ImageButton 
+            android:id="@+id/rightIncreaseBtn"
+            android:layout_width="44dp"
+            android:layout_height="160dp"
+            android:background="@drawable/right_increase"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/plus_symbol"
+            android:scaleType="centerInside"
+            android:paddingLeft="10dp"
+            android:layout_marginRight="@dimen/small_round_btn_margin"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

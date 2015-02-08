@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/blue_background_color" >
+    <include 
+        android:id="@+id/title_layout"
+        layout="@layout/custom_title_layout"/>
+    
+    <RelativeLayout 
+        android:id="@+id/all_switch_layout"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/content_margin_to_title"
+        android:layout_height="wrap_content">
+        
+        <Button android:id="@+id/allOnBtn"
+            android:layout_width="@dimen/round_btn_size"
+            android:layout_height="@dimen/round_btn_size"
+            android:layout_marginLeft="@dimen/round_btn_margin"
+            android:layout_centerVertical="true"
+            android:text="@string/switch_all_on"
+            android:textSize="@dimen/round_btn_textsize"
+            android:textColor="@android:color/white"
+            android:background="@drawable/green_round_back"/>
+
+        <Button android:id="@+id/allOffBtn"
+            android:layout_width="@dimen/round_btn_size"
+            android:layout_height="@dimen/round_btn_size"
+            android:layout_marginRight="@dimen/round_btn_margin"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/switch_all_off"
+            android:textSize="@dimen/round_btn_textsize"
+            android:textColor="@android:color/white"
+            android:background="@drawable/black_round_background"/>
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/content_margin_to_title"
+        android:layout_height="wrap_content">
+        
+        <EditText android:id="@+id/drop_light_name_input"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:singleLine="true"
+            android:text="槽灯"
+            android:hint="槽灯"
+            android:padding="10dp"
+            android:textSize="25sp"
+            android:layout_marginLeft="@dimen/round_btn_margin"
+            android:layout_centerVertical="true" />
+        
+        
+        <CheckBox 
+            android:id="@+id/drop_light_checkbox"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:button="@drawable/custom_switch_button"
+            android:textOn=""
+            android:textOff=""
+            android:text=""
+            android:layout_marginRight="@dimen/round_btn_margin"
+            android:layout_centerVertical="true" />
+        
+    </RelativeLayout>
+
+        <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/content_margin_to_title"
+        android:layout_height="wrap_content">
+        
+        <EditText android:id="@+id/track_light_name_input"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:singleLine="true"
+            android:text="吊灯"
+            android:hint="吊灯"
+            android:padding="10dp"
+            android:textSize="25sp"
+            android:layout_marginLeft="@dimen/round_btn_margin"
+            android:layout_centerVertical="true" />
+        
+        
+        <CheckBox 
+            android:id="@+id/track_light_checkbox"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:button="@drawable/custom_switch_button"
+            android:textOn=""
+            android:textOff=""
+            android:text=""
+            android:layout_marginRight="@dimen/round_btn_margin"
+            android:layout_centerVertical="true" />
+        
+    </RelativeLayout>
+
+    
+</LinearLayout>

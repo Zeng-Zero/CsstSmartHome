@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 添加封面窗体布局 -->
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+>
+    <LinearLayout
+		android:id="@+id/pop_layout"
+		android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:gravity="center_horizontal"
+    	android:orientation="vertical"
+    	android:layout_alignParentBottom="true"
+    	android:layout_marginLeft="5dip"
+    	android:layout_marginRight="5dip"
+    	android:background="@drawable/csst_add_icon_bg"
+	>
+        <!-- 预设图片 -->
+        <Button 
+            android:id="@+id/mPickPreset"
+            android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="20dip"
+        	android:layout_marginRight="20dip"
+        	android:layout_marginTop="20dip"
+        	android:layout_marginBottom="10dip"
+        	android:textStyle="bold"
+        	android:background="@drawable/csst_add_icon_btn_bg"
+        	android:text="@string/csst_pick_preset" />
+        <!-- 拍照 -->
+        <Button 
+            android:id="@+id/mPickTake"
+            android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="20dip"
+        	android:layout_marginRight="20dip"
+        	android:layout_marginTop="10dip"
+        	android:layout_marginBottom="10dip"
+        	android:textStyle="bold"
+        	android:background="@drawable/csst_add_icon_btn_bg"
+        	android:text="@string/csst_pick_tack" />
+        <!-- 本地图片 -->
+        <Button 
+            android:id="@+id/mPickAlbum"
+            android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="20dip"
+        	android:layout_marginRight="20dip"
+        	android:layout_marginTop="10dip"
+        	android:layout_marginBottom="10dip"
+        	android:textStyle="bold"
+        	android:background="@drawable/csst_add_icon_btn_bg"
+        	android:text="@string/csst_album_tack" />
+        <!-- 取消-->
+        <Button 
+            android:id="@+id/mCancel"
+            android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="20dip"
+        	android:layout_marginRight="20dip"
+        	android:layout_marginTop="10dip"
+        	android:layout_marginBottom="20dip"
+        	android:textStyle="bold"
+        	android:background="@drawable/csst_add_cancel_btn_bg"
+        	android:text="@string/csst_cancel" />
+    </LinearLayout>
+</RelativeLayout>

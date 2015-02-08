@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 窗帘遥控器 -->
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:gravity="center" >
+    
+    <!-- 打开-->
+    <Button
+        android:id="@+id/mBtnOpenCurtain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="50dip"
+        android:paddingRight="50dip"
+        android:layout_marginTop="20dip"
+        android:layout_marginBottom="20dip"
+        android:background="@drawable/csst_tuoyuan_button"
+        android:text="@string/csst_curtainrc_open_key"
+        android:textColor="@color/white" />
+    <!-- 暂停-->
+    <Button
+        android:id="@+id/mBtnPauseCurtain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="50dip"
+        android:paddingRight="50dip"
+        android:layout_marginTop="20dip"
+        android:layout_marginBottom="20dip"
+        android:background="@drawable/csst_tuoyuan_button"
+        android:text="@string/csst_curtainrc_pause_key"
+        android:textColor="@color/white" />
+    <!-- 关闭-->
+    <Button
+        android:id="@+id/mBtnCloseCurtain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="50dip"
+        android:paddingRight="50dip"
+        android:layout_marginTop="20dip"
+        android:layout_marginBottom="20dip"
+        android:background="@drawable/csst_tuoyuan_button"
+        android:text="@string/csst_curtainrc_close_key"
+        android:textColor="@color/white" />
+
+</LinearLayout>

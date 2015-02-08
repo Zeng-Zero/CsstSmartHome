@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/blue_background_color" >
+    <RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:orientation="vertical"
+    android:background="@drawable/title_background" >
+    
+    <LinearLayout 
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:gravity="left"
+        android:id="@+id/back_btn"
+        >
+   <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_gravity="left"
+        android:gravity="center"
+       	android:textSize="20sp"
+        android:paddingLeft="16dp"
+        android:textColor="@android:color/white"
+        android:text="@string/csst_back"
+       />
+    </LinearLayout>
+    
+    <TextView 
+        android:id="@+id/title_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="Custom Title"/>
+          <!-- 显示网络设备连接的的图片-->
+      <Button
+        android:id="@+id/mBtnreflash"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/reflash"
+        android:textColor="@color/white"
+        android:layout_marginRight="5dp"
+        android:textSize="@dimen/text_title_size" />
+
+	</RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/all_switch_layout"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/content_margin_to_title"
+        android:layout_height="wrap_content">
+        
+        <Button android:id="@+id/allOnBtn"
+            android:layout_width="@dimen/round_btn_size"
+            android:layout_height="@dimen/round_btn_size"
+            android:layout_marginLeft="@dimen/round_btn_margin"
+            android:layout_centerVertical="true"
+            android:text="@string/switch_all_on"
+            android:textSize="@dimen/round_btn_textsize"
+            android:textColor="@android:color/white"
+            android:background="@drawable/green_round_back"/>
+
+        <Button android:id="@+id/allOffBtn"
+            android:layout_width="@dimen/round_btn_size"
+            android:layout_height="@dimen/round_btn_size"
+            android:layout_marginRight="@dimen/round_btn_margin"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/switch_all_off"
+            android:textSize="@dimen/round_btn_textsize"
+            android:textColor="@android:color/white"
+            android:background="@drawable/black_round_background"/>
+    </RelativeLayout>
+    <LinearLayout android:focusable="true"
+      android:focusableInTouchMode="true" android:layout_width="0px"
+      android:layout_height="0px" />
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/content_margin_to_title"
+        android:layout_height="wrap_content">
+        
+        <EditText android:id="@+id/drop_light_name_input"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:singleLine="true"
+            android:text="@string/csst_switch_diaodeng"
+            android:hint="@string/csst_switch_diaodeng"
+            android:padding="10dp"
+            android:textSize="25sp"
+            android:layout_marginLeft="@dimen/round_btn_margin"
+            android:layout_centerVertical="true" />
+        
+        
+        <Button 
+            android:id="@+id/drop_light_checkbox"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/switch_on"
+            android:layout_marginRight="@dimen/round_btn_margin"
+            android:layout_centerVertical="true" />
+        
+    </RelativeLayout>
+
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/content_margin_to_title"
+        android:layout_height="wrap_content">
+        
+        <EditText android:id="@+id/track_light_name_input"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:singleLine="true"
+            android:text="@string/csst_switch_caodeng"
+            android:hint="@string/csst_switch_caodeng"
+            android:padding="10dp"
+            android:textSize="25sp"
+            android:layout_marginLeft="@dimen/round_btn_margin"
+            android:layout_centerVertical="true" />
+        
+        
+        <Button 
+            android:id="@+id/track_light_checkbox"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/switch_on"
+            android:layout_marginRight="@dimen/round_btn_margin"
+            android:layout_centerVertical="true" />
+        
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/content_margin_to_title"
+        android:layout_height="wrap_content">
+        
+        <EditText android:id="@+id/wall_light_name_input"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:singleLine="true"
+            android:text="@string/csst_switch_bideng"
+            android:hint="@string/csst_switch_bideng"
+            android:padding="10dp"
+            android:textSize="25sp"
+            android:layout_marginLeft="@dimen/round_btn_margin"
+            android:layout_centerVertical="true" />
+        
+        
+        <Button 
+            android:id="@+id/wall_light_checkbox"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/switch_on"
+            android:layout_marginRight="@dimen/round_btn_margin"
+            android:layout_centerVertical="true" />
+        
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/menu_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="1dip"
+        android:layout_marginRight="1dip"
+        android:gravity="center|bottom"
+        android:orientation="vertical"
+        android:theme="@style/Transparent"
+         >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/popbackground"
+            android:orientation="vertical" >
+      		<Button
+                android:id="@+id/btnedit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dip"                
+                android:background="@drawable/csst_add_icon_btn_normal"
+                android:text="@string/csst_model_edit" />
+            <Button
+                android:id="@+id/btnclockopen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dip"                
+                android:background="@drawable/csst_add_icon_btn_normal"
+                android:text="@string/csst_model_clockopen" />
+            <Button
+                android:id="@+id/btndelete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dip"
+                android:background="@drawable/csst_add_icon_btn_normal"
+                android:text="@string/csst_model_delete" />
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dip"
+                android:background="@drawable/csst_add_icon_btn_normal"
+                android:text="@string/csst_model_cancel" />
+        </LinearLayout>
+
+</LinearLayout>

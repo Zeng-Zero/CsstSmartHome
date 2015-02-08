@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_background_color"
+    android:orientation="vertical" >
+
+
+    <RelativeLayout
+        android:id="@+id/curtain_animation_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/curtain_animation_imageview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="10dp"
+            android:src="@drawable/curtain" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/openCurtain"
+        android:layout_width="@dimen/round_btn_size"
+        android:layout_height="@dimen/round_btn_size"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/blue_round_background"
+        android:text="打开"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/round_btn_textsize" />
+
+    <Button
+        android:id="@+id/pauseAction"
+        android:layout_width="@dimen/round_btn_size"
+        android:layout_height="@dimen/round_btn_size"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/blue_round_background"
+        android:text="暂停"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/round_btn_textsize" />
+
+    <Button
+        android:id="@+id/closeCurtain"
+        android:layout_width="@dimen/round_btn_size"
+        android:layout_height="@dimen/round_btn_size"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/blue_round_background"
+        android:text="关闭"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/round_btn_textsize" />
+
+</LinearLayout>

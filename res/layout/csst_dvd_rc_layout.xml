@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- dvd遥控器 -->
+<com.csst.smarthome.widget.CsstVerticalPager xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    <!-- 第一页 -->
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+        <include layout="@layout/csst_dvd_rc_layout_page1" />
+    </FrameLayout>
+    <!-- 第二页 -->
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+        <include layout="@layout/csst_dvd_rc_layout_page2" />
+    </FrameLayout>
+</com.csst.smarthome.widget.CsstVerticalPager>

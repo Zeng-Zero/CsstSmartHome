@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+	中控配置
+ -->
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/netConfigContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black" >
+    <!-- 标题栏 -->
+	<RelativeLayout 
+		android:id="@+id/layout_top"
+		android:layout_width="fill_parent"
+	    android:layout_height="50.0dip"
+	    android:layout_alignParentTop="true"
+	    android:layout_centerHorizontal="true" >
+	    <include layout="@layout/csst_title_layout"/>
+	</RelativeLayout>
+    <!-- 配置内容 -->
+    <LinearLayout
+		android:id="@+id/layout_config_container"
+		android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:orientation="vertical"
+    	android:layout_below="@id/layout_top"
+    	android:layout_alignParentLeft="true"
+    	android:layout_alignParentRight="true"
+    	android:layout_alignParentBottom="true"
+    	android:background="@color/white"
+	>
+        <!-- WIFI名称 -->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+			android:layout_marginTop="30dip"
+			android:layout_marginBottom="10dip"
+		>
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="5dip"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="@string/csst_net_config_ssid" />
+            <EditText 
+                android:id="@+id/mEDSsid"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="10dip"
+                android:imeOptions="actionDone"
+                android:inputType="textPostalAddress" />
+        </LinearLayout>
+        <!-- 密码 -->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+			android:layout_marginTop="10dip"
+			android:layout_marginBottom="10dip"
+		>
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="5dip"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="@string/csst_net_config_pawd" />
+            <EditText 
+                android:id="@+id/mEDPawd"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="10dip"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword" />
+        </LinearLayout>
+        <!-- 显示密码 -->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+			android:layout_marginTop="10dip"
+			android:layout_marginBottom="10dip"
+		>
+            <CheckBox
+                android:id="@+id/mCBShowPawd" 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="5dip" />
+            <TextView 
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="10dip"
+                android:text="@string/csst_net_config_show_pass" />
+        </LinearLayout>
+        <!-- 配置 -->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+			android:layout_marginTop="10dip"
+			android:layout_marginBottom="10dip"
+		>
+            <Button
+                android:id="@+id/mBtnConfig" 
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:text="@string/csst_net_config" />
+        </LinearLayout>
+    </LinearLayout>
+    
+ </RelativeLayout>

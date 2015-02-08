@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 	
+	添加设备界面
+ -->
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/addDeviceContent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black" >
+	<!-- 标题栏 -->
+	<RelativeLayout 
+		android:id="@+id/layout_top"
+		android:layout_width="fill_parent"
+	    android:layout_height="50.0dip"
+	    android:layout_alignParentTop="true"
+	    android:layout_centerHorizontal="true" >
+	    <include layout="@layout/csst_title_layout"/>
+	</RelativeLayout>
+	<!-- 设备管理操作 -->
+	<LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:layout_below="@id/layout_top"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dip"
+        android:layout_marginTop="20dip"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:background="@drawable/csst_adddevice_item_btn_bg" >
+	    <!-- 相机名 -->
+	    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dip"
+            android:layout_marginTop="5dip"
+            android:orientation="horizontal" >
+            <!-- 相机名  -->
+            <TextView
+                android:layout_width="60dip"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/csst_camera_name"
+                android:textColor="@color/color_black"
+                android:textSize="@dimen/text_title_size" />
+            <EditText
+                android:id="@+id/mETName"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dip"
+                android:layout_marginRight="15dip"
+                android:inputType="text"
+                android:hint="@string/csst_camera_name_hint"
+                android:layout_weight="1"
+                android:maxLength="64"
+                android:singleLine="true" />
+        </LinearLayout>
+	    <!-- 设备ID -->
+	    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dip"
+            android:layout_marginTop="5dip"
+            android:orientation="horizontal" >
+            <!-- 设备ID -->
+            <TextView
+                android:layout_width="60dip"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/csst_camera_id"
+                android:textColor="@color/color_black"
+                android:textSize="@dimen/text_title_size" />
+            <EditText
+                android:id="@+id/mETDId"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dip"
+                android:layout_marginRight="15dip"
+                android:inputType="text"
+                android:hint="@string/csst_camera_id_hint"
+                android:layout_weight="1"
+                android:maxLength="64"
+                android:singleLine="true" />
+        </LinearLayout>
+        <!-- 分割线 -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:contentDescription="@null"
+            android:src="@color/color_grey" />
+	    <!-- 用户名 -->
+	    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dip"
+            android:layout_marginTop="5dip"
+            android:orientation="horizontal" >
+            <!-- 用户名 -->
+            <TextView
+                android:layout_width="60dip"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/csst_camera_user"
+                android:textColor="@color/color_black"
+                android:textSize="@dimen/text_title_size" />
+            <EditText
+                android:id="@+id/mETUser"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dip"
+                android:layout_marginRight="15dip"
+                android:inputType="text"
+                android:hint="@string/csst_camera_user_hint"
+                android:text="@string/csst_camera_defuser"
+                android:layout_weight="1"
+                android:maxLength="20"
+                android:singleLine="true" />
+        </LinearLayout>
+	    <!-- 分割线 -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:contentDescription="@null"
+            android:src="@color/color_grey" />
+	    <!-- 密码 -->
+	    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dip"
+            android:layout_marginTop="5dip"
+            android:orientation="horizontal" >
+            <!-- 密码 -->
+            <TextView
+                android:layout_width="60dip"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/csst_camera_pawd"
+                android:textColor="@color/color_black"
+                android:textSize="@dimen/text_title_size" />
+            <EditText
+                android:id="@+id/mETPassword"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dip"
+                android:layout_marginRight="15dip"
+                android:inputType="textPassword"
+                android:hint="@string/csst_camera_pawd_hint"
+                android:layout_weight="1"
+                android:maxLength="20"
+                android:singleLine="true" />
+        </LinearLayout>
+        <!-- 显示密码 -->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dip"
+            android:layout_marginTop="5dip"
+            android:layout_marginLeft="15dip"
+            android:layout_marginRight="15dip"
+            android:gravity="right|center_vertical"
+            android:orientation="horizontal" >
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="5dip"
+                android:text="@string/csst_net_config_show_pass" />
+            <CheckBox
+                android:id="@+id/mCBShowPawd" 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="5dip" />
+        </LinearLayout>
+        <!-- 分割线 -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:contentDescription="@null"
+            android:src="@color/color_grey" />
+	    <!-- 扫描、搜索 -->
+	    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dip"
+            android:layout_marginTop="10dip"
+            android:layout_marginLeft="15dip"
+            android:layout_marginRight="15dip"
+            android:orientation="horizontal" >
+            <Button
+                android:id="@+id/mScanCamera"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_weight="1"
+                android:background="@drawable/csst_button_black"
+                android:paddingBottom="10dip"
+                android:paddingTop="10dip"
+                android:text="@string/csst_device_scan"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+            <Button
+                android:id="@+id/mSerchCamera"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_weight="1"
+                android:background="@drawable/csst_button_black"
+                android:paddingBottom="10dip"
+                android:paddingTop="10dip"
+                android:text="@string/csst_device_search"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

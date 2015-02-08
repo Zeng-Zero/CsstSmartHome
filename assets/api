@@ -1,0 +1,36 @@
+
+Demo程序提供的只是网络摄像机的基础功能演示，所需要的so文件请到IPCamerDemo\libs\armeabi 目录下提取，如需其他功能请参照CGI文档；
+此外调用so文件时包名一定为:object.p2pipcam.nativecaller 否则调用无效。
+BridgeService中的所有so库返回结果的回调函数必须全部对应；
+
+
+
+2104.03.21更新：
+更新报警日程设置混乱的问题；
+
+BridgeService中部分参数更新：
+private void AudioData(byte[] pcm, int len) {};
+
+public void CallBack_H264Data(String did, byte[] h264, int type, int size,
+			int time, int sessid, int version){};
+public void VideoData(String did, byte[] videobuf, int h264Data, int len,
+			int width, int height, int time, int sessid, int version) {};
+
+NativeCaller类中添加：
+public native static int TransferMessage(String did, String msg, int len);//此接口可以透传所有的CGI指令
+	
+public native static void PPPPInitialOther(String svr);//初始化其他服务器
+
+---------------------------------------------------------------------------
+
+
+
+
+2013.12.26更新：
+修复了SDK版本4.0以上时监听对讲崩溃的问题；
+----------------------------------------------------
+
+
+
+
+

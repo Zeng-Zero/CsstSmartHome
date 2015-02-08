@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blue_background_color"
+        android:orientation="vertical" >
+
+        <include layout="@layout/custom_title_layout" />
+
+        <LinearLayout
+            android:id="@+id/remoteTemplate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/remoteTemplateLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="遥控模板："
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <AutoCompleteTextView
+                android:id="@+id/actv"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:drawableRight="@drawable/drop_down_list"
+                android:padding="5dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/remoteDeviceName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/remoteNameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="设备名称："
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <AutoCompleteTextView
+                android:id="@+id/deviceName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:padding="5dp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/btnLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp" >
+
+            <Button
+                android:id="@+id/btnSearchDevice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/btn_bkg"
+                android:text="搜索设备"
+                android:textColor="@color/done_btn_textcolor_list" />
+
+            <Button
+                android:id="@+id/btnBindSocket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/btn_bkg"
+                android:text="绑定插座"
+                android:textColor="@color/done_btn_textcolor_list" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp" >
+
+            <Button
+                android:id="@+id/btnCloudRemote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/btn_bkg"
+                android:text="云遥控"
+                android:textColor="@color/done_btn_textcolor_list" />
+
+            <Button
+                android:id="@+id/btnCustomRemote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/btn_bkg"
+                android:text="自定义遥控"
+                android:textColor="@color/done_btn_textcolor_list" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_marginTop="250dp"
+        layout="@layout/add_remote_code_popup_layout"
+        android:visibility="gone" />
+
+</merge>

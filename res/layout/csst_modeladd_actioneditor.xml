@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 	
+	添加情景模式界面
+ -->
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/addactioncontent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@color/currentbackground"
+    >
+	<!-- 标题栏 -->
+	<RelativeLayout 
+		android:id="@+id/layout_top"
+		android:layout_width="fill_parent"
+	    android:layout_height="50.0dip" >
+	    <include layout="@layout/csst_title_layout"/>
+	</RelativeLayout>
+		<!-- 隔开符 -->
+   		<TextView 
+   		    android:layout_width="fill_parent"
+   		    android:layout_height="wrap_content"
+   		    android:textSize="@dimen/normal_textsize"
+   		    android:visibility="invisible"
+	    />
+		<LinearLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:id="@+id/llwhichactionmain"
+	    android:orientation="vertical"
+	    android:layout_marginLeft="20sp"
+	    android:layout_marginRight="40sp"
+	    >
+		<!-- 调用动作-->
+   		<LinearLayout 
+   		    android:layout_width="fill_parent"
+   		    android:layout_height="wrap_content"
+   		    android:id="@+id/llwhichaction"
+   		    android:orientation="horizontal"
+   		    >
+	    <!-- 名称输入标签 -->
+   		<TextView 
+   		    android:layout_weight="1"
+   		    android:layout_width="fill_parent"
+   		    android:layout_height="40dp"
+   		    android:id="@+id/tvwhichaction"
+   		    android:layout_gravity="center_horizontal"
+   		    android:text="@string/csst_model_whichaction"
+   		    android:gravity="right|center_vertical"
+   		    android:textSize="@dimen/normal_textsize_test"
+   		    android:textColor="@color/color_white"
+   		    />
+   		<LinearLayout 
+   		    android:layout_weight="1"
+   		    android:layout_width="fill_parent"
+   		    android:layout_height="40dp"
+   		    android:id="@+id/llimgbtn"
+   		    android:gravity="center"
+   		    >
+   		<ImageView
+   		    android:layout_width="wrap_content"
+   		    android:layout_height="wrap_content"
+   		    android:id="@+id/btwhichaction"
+   		    android:layout_gravity="center"
+   		    android:gravity="center"
+   		    android:src="@drawable/arrow"
+   		    />
+   		</LinearLayout>
+   		</LinearLayout>
+		<!-- 隔开符 -->
+   		<TextView 
+   		    android:layout_width="fill_parent"
+   		    android:layout_height="wrap_content"
+   		    android:textSize="@dimen/normal_textsize"
+   		    android:visibility="invisible"
+	    />
+   		<!-- 动作位置 -->
+   		<LinearLayout 
+   		    android:layout_width="fill_parent"
+   		    android:layout_height="wrap_content"
+   		    android:id="@+id/llactionlocal"
+   		    android:orientation="horizontal"
+   		    >
+	    <!-- 名称输入标签 -->
+   		<TextView 
+   		     android:layout_width="fill_parent"
+   		    android:layout_height="40dp"
+   		    android:id="@+id/tvactionlocaltag"
+   		    android:layout_gravity="center_horizontal"
+   		    android:text="@string/csst_model_actionlocal"
+   		    android:gravity="right|center_vertical"
+   		    android:layout_weight="1"
+   		    android:textSize="@dimen/normal_textsize_test"
+   		    android:textColor="@color/color_white"
+   		    />
+   		<TextView 
+   		    android:layout_width="fill_parent"
+   		    android:layout_height="40dp"
+   		    android:id="@+id/tvactionlocal"
+   		    android:layout_gravity="center_horizontal"
+   		    android:hint="@string/csst_model_actionlocal_only"
+   		    android:gravity="center"
+   		    android:layout_weight="1"
+   		    android:textSize="@dimen/normal_textsize"
+   		    android:background="@drawable/csst_edittext_bg_white"
+   		    />
+   		</LinearLayout>
+		<!-- 隔开符 -->
+   		<TextView 
+   		    android:layout_width="fill_parent"
+   		    android:layout_height="wrap_content"
+   		    android:textSize="@dimen/normal_textsize"
+   		    android:visibility="invisible"
+	    />
+   		<!-- 动作名称-->
+   		<LinearLayout 
+   		    android:layout_width="fill_parent"
+   		    android:layout_height="wrap_content"
+   		    android:id="@+id/llactionname"
+   		    android:orientation="horizontal"
+   		    >
+	    <!-- 名称输入标签 -->
+   		<TextView 
+   		    android:layout_width="fill_parent"
+   		    android:layout_height="40dp"
+   		    android:id="@+id/tvactionname"
+   		    android:layout_gravity="center_horizontal"
+   		    android:text="@string/csst_model_actionname"
+   		    android:gravity="right|center_vertical"
+   		    android:layout_weight="1"
+   		    android:textSize="@dimen/normal_textsize"
+   		    android:textColor="@color/color_white"
+   		    />
+   		<EditText 
+   		    android:layout_width="fill_parent"
+   		    android:layout_height="40dp"
+   		    android:id="@+id/evnameaciton"
+   		    android:layout_gravity="center_horizontal"
+   		    android:hint="@string/csst_model_actionnametip"
+   		    android:gravity="center"
+   		    android:layout_weight="1"
+   		    android:textSize="@dimen/normal_textsize"
+   		    android:background="@drawable/csst_edittext_bg_white"
+   		    />
+   		</LinearLayout>
+   		<!-- 隔开符 -->
+   		<TextView 
+   		    android:layout_width="fill_parent"
+   		    android:layout_height="wrap_content"
+   		    android:textSize="@dimen/normal_textsize"
+   		    android:visibility="invisible"
+	    />
+   		<!-- 动作延时 -->
+   		<LinearLayout 
+   		    android:layout_width="fill_parent"
+   		    android:layout_height="wrap_content"
+   		    android:id="@+id/llactiondeleytime"
+   		    android:orientation="horizontal"
+   		    >
+	    <!-- 名称输入标签 -->
+   		<TextView 
+   		    android:layout_width="fill_parent"
+   		    android:layout_height="40dp"
+   		    android:id="@+id/tvactiondelaytime"
+   		    android:layout_gravity="center_horizontal"
+   		    android:text="@string/csst_model_actiondelaytime"
+   		    android:gravity="right|center_vertical"
+   		    android:layout_weight="1"
+   		    android:textSize="@dimen/normal_textsize_test"
+   		    android:textColor="@color/color_white"
+   		    />
+   		<EditText 
+   		    android:layout_width="fill_parent"
+   		    android:layout_height="40dp"
+   		    android:id="@+id/evactiondelaytime"
+   		    android:layout_gravity="center_horizontal"
+   		    android:hint="@string/csst_model_actiondelaytimetip"
+   		    android:gravity="center"
+   		    android:layout_weight="1"
+   		    android:textSize="@dimen/normal_textsize"
+   		    android:background="@drawable/csst_edittext_bg_white"
+   		    android:inputType="time"/>"
+   		</LinearLayout>
+   	</LinearLayout>	
+</LinearLayout>

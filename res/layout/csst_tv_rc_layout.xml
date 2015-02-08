@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 电视遥控器 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    <!-- 静音、电源 -->
+    <RelativeLayout
+        android:id="@+id/layout_01"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dip"
+        android:layout_marginTop="10dip" >
+        <!-- 电源 -->
+        <Button
+            android:id="@+id/mBtnPower"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dip"
+            android:background="@drawable/csst_tv_power_btn_bg" />
+        <!-- 静音 -->
+        <Button
+            android:id="@+id/mBtnMute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/mBtnPower"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dip"
+            android:background="@drawable/csst_tv_mute_btn_bg" />
+    </RelativeLayout>
+    <!-- 信号源，声音，图像 -->
+    <LinearLayout
+        android:id="@+id/layout_02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_01"
+        android:layout_marginBottom="10dip"
+        android:layout_marginTop="10dip"
+        android:gravity="center"
+        android:orientation="horizontal" >
+        <!-- 信号源 -->
+        <Button
+            android:id="@+id/mBtnSignal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/csst_tv_btn_def_bg"
+            android:paddingBottom="8dip"
+            android:paddingTop="8dip"
+            android:text="@string/csst_tvrc_signal_key"
+            android:textColor="@android:color/white" />
+        <!-- 声音 -->
+        <Button
+            android:id="@+id/mBtnSound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dip"
+            android:layout_weight="1"
+            android:background="@drawable/csst_tv_btn_def_bg"
+            android:paddingBottom="8dip"
+            android:paddingTop="8dip"
+            android:text="@string/csst_tvrc_sound_key"
+            android:textColor="@android:color/white" />
+        <!-- 图像 -->
+        <Button
+            android:id="@+id/mBtnImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dip"
+            android:layout_weight="1"
+            android:background="@drawable/csst_tv_btn_def_bg"
+            android:paddingBottom="8dip"
+            android:paddingTop="8dip"
+            android:text="@string/csst_tvrc_image_key"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+    <!-- 音量、声道 -->
+    <LinearLayout
+        android:id="@+id/layout_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dip"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:baselineAligned="false"
+        android:paddingBottom="30dip" >
+        <!-- 音量 -->
+        <LinearLayout
+            android:id="@+id/volume_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dip"
+            android:layout_weight="2"
+            android:gravity="left"
+            android:orientation="vertical" >
+            <Button
+                android:id="@+id/mBtnVolumeAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dip"
+                android:background="@drawable/csst_tv_btn_def_bg"
+                android:text="@string/csst_tvrc_vol_add"
+                android:textColor="@android:color/white" />
+            <Button
+                android:id="@+id/mBtnVolumeDel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/csst_tv_btn_def_bg"
+                android:text="@string/csst_tvrc_vol_del"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+        <!-- 频道 -->
+        <LinearLayout
+            android:id="@+id/channel_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dip"
+            android:layout_weight="2"
+            android:gravity="right"
+            android:orientation="vertical" >
+            <Button
+                android:id="@+id/mBtnChannelAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dip"
+                android:background="@drawable/csst_tv_btn_def_bg"
+                android:text="@string/csst_tvrc_ch_add"
+                android:textColor="@android:color/white" />
+            <Button
+                android:id="@+id/mBtnChannelDel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/csst_tv_btn_def_bg"
+                android:paddingBottom="8dip"
+                android:paddingTop="8dip"
+                android:text="@string/csst_tvrc_ch_del"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </LinearLayout>
+    <!-- 音量、频道切换 -->
+    <com.csst.smarthome.widget.CsstCircleView
+        android:id="@+id/layout_vol_ch"
+        android:layout_width="280dip"
+        android:layout_height="220dip"
+        android:layout_above="@id/layout_bottom"
+        android:layout_below="@id/layout_02"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dip"
+        android:gravity="center" >
+        <!-- 退出:右下 -->
+        <Button
+            android:id="@+id/mBtnExit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/csst_tv_fav_btn_bg"
+            android:gravity="right"
+            android:padding="12dp"
+            android:text="@string/csst_tvrc_exit_key"
+            android:textColor="@android:color/white" />
+        <!-- EPG:左下 -->
+        <Button
+            android:id="@+id/mBtnEpg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|left"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/csst_tv_epg_btn_bg"
+            android:gravity="left"
+            android:padding="13dp"
+            android:text="@string/csst_tvrc_epg_key"
+            android:textColor="@android:color/white" />
+        <!-- MENU:左上 -->
+        <Button
+            android:id="@+id/mBtnMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|top"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/csst_tv_menu_btn_bg"
+            android:gravity="left"
+            android:padding="13dp"
+            android:text="@string/csst_tvrc_menu_key"
+            android:textColor="@android:color/white" />
+        <!-- FAV:右上 -->
+        <Button
+            android:id="@+id/mBtnFav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|right"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/csst_tv_exit_btn_bg"
+            android:gravity="right"
+            android:padding="12dp"
+            android:text="@string/csst_tvrc_fav_key"
+            android:textColor="@android:color/white" />
+    </com.csst.smarthome.widget.CsstCircleView>
+</RelativeLayout>

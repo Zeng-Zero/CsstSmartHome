@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_background_color"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/titleBarLayout"
+        layout="@layout/custom_title_layout" />
+
+    <Button
+        android:id="@+id/addBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/transparent"
+        android:text="+"
+        android:textColor="@android:color/white"
+        android:textSize="30sp" />
+    
+    <Button
+        android:id="@+id/doneBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/transparent"
+        android:text="@string/done"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/keysPanelLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/titleBarLayout" >
+
+        <GridView
+            android:id="@+id/keysOfRemote"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:numColumns="3" />
+
+        <LinearLayout
+            android:id="@+id/bottomPopupLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <Button
+                android:id="@+id/learnKeyCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/popup_btn_bkg"
+                android:text="@string/csst_rc_custkeystudycode" />
+
+            <Button
+                android:id="@+id/editKey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/popup_btn_bkg"
+                android:text="@string/csst_rc_custkeystudyedit" />
+
+
+            <Button
+                android:id="@+id/deleteKey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/popup_btn_bkg"
+                android:text="@string/csst_delete" />
+
+            <Button
+                android:id="@+id/cancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/popup_btn_bkg"
+                android:text="@string/csst_cancel" />
+        </LinearLayout>
+        <include 
+            layout="@layout/learn_remote_code_popup_layout"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />"
+    </RelativeLayout>
+
+</RelativeLayout>

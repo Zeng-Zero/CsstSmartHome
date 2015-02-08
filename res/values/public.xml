@@ -1,0 +1,41 @@
+<resources>
+
+    <eat-comment />
+
+    <public id="0x7f02002a" name="csst_preset_001" type="drawable" />
+    <public id="0x7f02002b" name="csst_preset_002" type="drawable" />
+    <public id="0x7f02002c" name="csst_preset_003" type="drawable" />
+    <public id="0x7f02002d" name="csst_preset_004" type="drawable" />
+    <public id="0x7f02002e" name="csst_preset_005" type="drawable" />
+    <public id="0x7f02002f" name="csst_preset_006" type="drawable" />
+    <public id="0x7f020030" name="csst_preset_007" type="drawable" />
+    <public id="0x7f020031" name="csst_preset_008" type="drawable" />
+    <public id="0x7f020032" name="csst_preset_009" type="drawable" />
+    <public id="0x7f020033" name="csst_preset_010" type="drawable" />
+    <public id="0x7f020034" name="csst_preset_011" type="drawable" />
+    <public id="0x7f020035" name="csst_preset_012" type="drawable" />
+    <public id="0x7f020036" name="csst_preset_013" type="drawable" />
+    <public id="0x7f020037" name="csst_preset_014" type="drawable" />
+    <public id="0x7f020038" name="csst_preset_015" type="drawable" />
+    <public id="0x7f020039" name="csst_preset_016" type="drawable" />
+    <public id="0x7f02003a" name="csst_preset_017" type="drawable" />
+    <public id="0x7f02003b" name="csst_preset_018" type="drawable" />
+    <public id="0x7f02003c" name="csst_preset_019" type="drawable" />
+    <public id="0x7f02003d" name="csst_preset_020" type="drawable" />
+    <public id="0x7f02003e" name="csst_preset_021" type="drawable" />
+    <public id="0x7f02003f" name="csst_preset_022" type="drawable" />
+    <public id="0x7f020040" name="csst_preset_023" type="drawable" />
+    <public id="0x7f020041" name="csst_preset_024" type="drawable" />
+    <public id="0x7f020042" name="csst_preset_025" type="drawable" />
+    <public id="0x7f020043" name="csst_preset_026" type="drawable" />
+    <public id="0x7f020044" name="csst_preset_027" type="drawable" />
+    <public id="0x7f020045" name="csst_preset_028" type="drawable" />
+    <public id="0x7f020046" name="csst_preset_029" type="drawable" />
+    <public id="0x7f020047" name="csst_preset_030" type="drawable" />
+    <public id="0x7f020048" name="csst_preset_031" type="drawable" />
+    <public id="0x7f020049" name="csst_preset_032" type="drawable" />
+    <public id="0x7f02004a" name="csst_preset_033" type="drawable" />
+    <public id="0x7f02004b" name="csst_preset_034" type="drawable" />
+    <public id="0x7f02004c" name="csst_preset_035" type="drawable" />
+
+</resources>

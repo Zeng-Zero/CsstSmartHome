@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  黑色按钮-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:state_pressed="false" android:drawable="@drawable/csst_button_black_normal"/>
+    <item android:state_pressed="true" android:drawable="@drawable/csst_button_black_press"/>
+    <item android:state_window_focused="false" android:drawable="@drawable/csst_button_black_normal"/>
+</selector>
+

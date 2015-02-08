@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 	
+	添加情景模式界面
+ -->
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/addModelcontent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@color/currentbackground"
+    >
+	<!-- 标题栏 -->
+	<RelativeLayout 
+		android:id="@+id/layout_top"
+		android:layout_width="fill_parent"
+	    android:layout_height="50.0dip" >
+	    <include layout="@layout/csst_title_layout"/>
+	</RelativeLayout>
+	<!-- 分隔符 -->
+		<TextView 
+   		    android:layout_width="fill_parent"
+   		    android:layout_height="wrap_content"
+   		    android:textSize="@dimen/normal_textsize"
+   		    android:visibility="invisible"
+	    />
+		<RadioGroup
+        android:id="@+id/radioGroup"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal"    >
+		<RadioButton
+		    android:id="@+id/radioButtonauto"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:text="@string/csst_safe_arm" 
+		    android:layout_marginLeft="20dp"
+		    android:layout_gravity="center"
+		    android:textColor="@color/white"
+		    android:layout_weight="1"
+		    />
+   			<!-- 隔开符 -->
+   			
+   		  <RadioButton
+   		      android:id="@+id/radioButtonclockopen"
+   		      android:layout_width="wrap_content"
+   		      android:layout_height="wrap_content"
+   		      android:layout_marginLeft="20dp"
+		      android:layout_gravity="center"
+		       android:textColor="@color/white"
+   		      android:text="@string/csst_safe_disarm" 
+   		       android:layout_weight="1"/>
+   		  </RadioGroup>
+   		 <TextView 
+		    android:layout_width="fill_parent"
+		    android:layout_height="2sp"
+		    android:id="@+id/tvlineopenclockmain"
+		    android:background="@color/btntitlebackground"
+		    />
+   		 
+   		 <LinearLayout 
+	    android:id="@+id/llname"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="center_horizontal"
+	    android:orientation="horizontal"
+	    android:layout_margin="10dp"
+	    >
+	 <!-- 名称输入标签 -->
+   		<TextView 
+   		    android:layout_width="wrap_content"
+   		    android:layout_height="wrap_content"
+   		    android:id="@+id/tvmodelname"
+   		    android:layout_gravity="center_horizontal"
+   		    android:text="@string/csst_timername"
+   		    android:gravity="center"
+   		    android:textSize="@dimen/normal_textsize"
+   		    android:textColor="@color/color_white"
+   		    />
+   		<EditText 
+ 			android:layout_width="wrap_content"
+   		    android:layout_height="wrap_content"
+   		    android:id="@+id/etmodelname"
+   		    android:layout_gravity="center_horizontal"
+   		    android:hint="@string/csst_timernametip"
+   		    android:gravity="center"
+   		    android:textSize="@dimen/normal_textsize"
+   		    android:background="@drawable/csst_edittext_bg_white"
+   		    />
+   	</LinearLayout>
+   		 
+   		 
+    <TextView 
+	    android:layout_width="fill_parent"
+	    android:layout_height="2sp"
+	    android:id="@+id/tvlineopenclockmain"
+	    android:background="@color/btntitlebackground"
+	    />		 
+   	<LinearLayout 
+   		    android:layout_width="fill_parent"
+   		    android:layout_height="wrap_content"
+   		    android:id="@+id/lltime"
+   		    android:orientation="horizontal"
+   		    android:layout_marginTop="20dp"
+   		    android:layout_marginBottom="20dp"
+   		    >
+   		 <!-- 重复 -->
+   		<TextView 
+   		    android:layout_width="wrap_content"
+   		    android:layout_height="wrap_content"
+   		    android:id="@+id/tvrepeat"
+   		    android:text="@string/csst_model_repeat"
+   		    android:gravity="center"
+   		    android:layout_marginLeft="20dp"
+		    android:layout_gravity="left"
+   		    android:textSize="@dimen/normal_textsize"
+   		    android:textColor="@color/color_white"
+   		    android:layout_weight="1" 
+   		    />
+   		<!-- 周一 -->
+   		<TextView 
+   		    android:layout_width="wrap_content"
+   		    android:layout_height="wrap_content"
+   		    android:id="@+id/tvmonday"
+   		    android:text="@string/csst_model_monday"
+   		    android:gravity="center"
+		    android:layout_gravity="left"
+   		    android:textSize="@dimen/normal_textsize"
+   		    android:textColor="@color/color_white"
+   		    android:layout_marginLeft="10dp"
+   		    android:layout_weight="1" 
+   		    />
+   		   		<!-- 周二-->
+	   		<TextView 
+	   		    android:layout_width="wrap_content"
+	   		    android:layout_height="wrap_content"
+	   		    android:id="@+id/tvtuesday"
+	   		    android:text="@string/csst_model_tuesday"
+	   		    android:gravity="center"
+			    android:layout_gravity="left"
+	   		    android:textSize="@dimen/normal_textsize"
+	   		    android:textColor="@color/color_white"
+	   		    android:layout_marginLeft="10dp"
+	   		    android:layout_weight="1" 
+	   		    />
+   		   		<!-- 周三 -->
+	   		<TextView 
+	   		    android:layout_width="wrap_content"
+	   		    android:layout_height="wrap_content"
+	   		    android:id="@+id/tvwednseday"
+	   		    android:text="@string/csst_model_wednseday"
+	   		    android:gravity="center"
+			    android:layout_gravity="left"
+	   		    android:textSize="@dimen/normal_textsize"
+	   		    android:textColor="@color/color_white"
+	   		    android:layout_marginLeft="10dp"
+	   		    android:layout_weight="1" 
+	   		    />
+   		   		<!-- 周四 -->
+	   		<TextView 
+	   		    android:layout_width="wrap_content"
+	   		    android:layout_height="wrap_content"
+	   		    android:id="@+id/tvthurseday"
+	   		    android:text="@string/csst_model_thurseday"
+	   		    android:gravity="center"
+			    android:layout_gravity="left"
+	   		    android:textSize="@dimen/normal_textsize"
+	   		    android:textColor="@color/color_white"
+	   		    android:layout_marginLeft="10dp"
+	   		    android:layout_weight="1" 
+	   		    />
+   		   		<!-- 周五 -->
+	   		<TextView 
+	   		    android:layout_width="wrap_content"
+	   		    android:layout_height="wrap_content"
+	   		    android:id="@+id/tvfriday"
+	   		    android:text="@string/csst_model_friday"
+	   		    android:gravity="center"
+			    android:layout_gravity="left"
+	   		    android:textSize="@dimen/normal_textsize"
+	   		    android:textColor="@color/color_white"
+	   		    android:layout_marginLeft="10dp"
+	   		    android:layout_weight="1" 
+	   		    />
+   		   		<!-- 周六-->
+	   		<TextView 
+	   		    android:layout_width="wrap_content"
+	   		    android:layout_height="wrap_content"
+	   		    android:id="@+id/tvsaturday"
+	   		    android:text="@string/csst_model_saturday"
+	   		    android:gravity="center"
+			    android:layout_gravity="left"
+	   		    android:textSize="@dimen/normal_textsize"
+	   		    android:textColor="@color/color_white"
+	   		    android:layout_marginLeft="10dp"
+	   		    android:layout_weight="1" 
+	   		    />
+   		   		<!-- 周日 -->
+	   		<TextView 
+	   		    android:layout_width="wrap_content"
+	   		    android:layout_height="wrap_content"
+	   		    android:id="@+id/tvsunday"
+	   		    android:text="@string/csst_model_sunday"
+	   		    android:gravity="center"
+	   		    android:textSize="@dimen/normal_textsize"
+	   		    android:textColor="@color/color_white"
+	   		    android:layout_marginLeft="10dp"
+	   		    android:layout_weight="1" 
+	   		    />
+	   		
+	   			<!-- 空格 -->
+	   		<TextView 
+	   		    android:layout_width="wrap_content"
+	   		    android:layout_height="wrap_content"
+	   		    android:id="@+id/tvsnull"
+	   		    android:gravity="center"
+	   		    android:textSize="@dimen/normal_textsize"
+	   		    android:textColor="@color/color_white"
+	   		    android:layout_weight="1" 
+	   		    />
+   		
+   		
+   		</LinearLayout>
+   		 <!-- 时间设置-->
+   		<TextView 
+   		    android:layout_width="fill_parent"
+   		    android:layout_height="wrap_content"
+   		    android:id="@+id/tvtimesetting"
+   		    android:text="@string/csst_model_timesetting"
+   		    android:gravity="center"
+   		    android:layout_marginLeft="20dp"
+   		    android:layout_marginBottom="5dp"
+		    android:layout_gravity="left"
+   		    android:textSize="@dimen/titile"
+   		    android:textColor="@color/color_white"
+   		    />
+   	 <LinearLayout
+        android:id="@+id/lltimesetting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dip"
+        android:gravity="center"
+        android:orientation="horizontal" >
+        <com.csst.smarthome.util.WheelView
+            android:id="@+id/hour"
+        	android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dip"
+            android:layout_weight="1"
+            />
+           <com.csst.smarthome.util.WheelView
+            android:id="@+id/min"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="35dip"
+            android:layout_weight="1" 
+            />
+
+     
+    </LinearLayout>
+   		
+   		
+</LinearLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 有虚线边框的按钮 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+    <stroke
+        android:width="1dp"
+        android:color="#6a9873"
+        android:dashWidth="1dp"
+        android:dashGap="2dp"/>
+    <padding
+        android:left="7dp"
+        android:top="7dp"
+        android:right="7dp"
+        android:bottom="7dp"/><!-- 各方向的间隔 -->
+    
+</shape>

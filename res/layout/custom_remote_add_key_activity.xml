@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_background_color"
+    android:orientation="vertical" >
+
+    <include layout="@layout/custom_title_layout" />
+
+    <Button 
+       android:id="@+id/doneBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/transparent"
+        android:text="@string/done"
+        android:textSize="20sp"
+        android:textColor="@color/whitesmoke"
+        />
+    
+    <LinearLayout
+        android:id="@+id/remoteKeyLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="80dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/remoteKeyNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/csst_rc_custkeyname"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/customRemoteKeyName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:maxLength="10"
+            android:padding="5dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/addKeyIconLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/remoteKeyLayout"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/customKeyIconBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:text="@string/csst_rc_custkeygallery"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+        
+        <ImageView android:id="@+id/addKeyIcon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/right_arrow"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomKeysPannel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#8fff"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" >
+
+            <ImageView
+                android:id="@+id/addKeyRewind"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/small_round_btn_size"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/key_rewind" />
+
+            <ImageView
+                android:id="@+id/addKeyStop"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/small_round_btn_size"
+                android:layout_weight="1"
+                android:src="@drawable/key_stop" />
+
+            <ImageView
+                android:id="@+id/addKeyForward"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/small_round_btn_size"
+                android:layout_weight="1"
+                android:src="@drawable/key_forward" />
+
+            <ImageView
+                android:id="@+id/addKeyPlayPause"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/small_round_btn_size"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/key_play_pause" />
+              <ImageView
+                android:id="@+id/addKeyDown"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/small_round_btn_size"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/key_down" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" >
+
+            <ImageView
+                android:id="@+id/addKeyPower"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/small_round_btn_size"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/key_power" />
+
+            <ImageView
+                android:id="@+id/addKeyMute"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/small_round_btn_size"
+                android:layout_weight="1"
+                android:src="@drawable/key_mute" />
+
+            <ImageView
+                android:id="@+id/addKeyPrevious"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/small_round_btn_size"
+                android:layout_weight="1"
+                android:src="@drawable/key_previous" />
+
+            <ImageView
+                android:id="@+id/addKeyNext"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/small_round_btn_size"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/key_next" 
+                />
+               <ImageView
+                android:id="@+id/addKeyUp"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/small_round_btn_size"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/key_up" />
+            
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" >
+
+            <ImageView
+                android:id="@+id/addKeyBack"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/small_round_btn_size"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/key_back" />
+
+            <ImageView
+                android:id="@+id/addKeyBlank"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/small_round_btn_size"
+                android:layout_weight="1"
+                android:src="@drawable/key_blank" />
+
+            <ImageView
+                android:id="@+id/addKeyOff"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/small_round_btn_size"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/key_off" />
+           <ImageView
+                android:id="@+id/addKeyOk"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/small_round_btn_size"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/key_ok" />
+            <ImageView
+                android:id="@+id/addKeyOn"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/small_round_btn_size"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/key_on" />
+        </LinearLayout>
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" >
+
+            <ImageView
+                android:id="@+id/addKeyAbout"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/small_round_btn_size"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/key_about" />
+
+            <ImageView
+                android:id="@+id/addKeyLow"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/small_round_btn_size"
+                android:layout_weight="1"
+                android:src="@drawable/key_low" />
+
+            <ImageView
+                android:id="@+id/addKeyLeft"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/small_round_btn_size"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/key_left" />
+           <ImageView
+                android:id="@+id/addKeyRight"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/small_round_btn_size"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/key_right" />
+            <ImageView
+                android:id="@+id/addkey_on"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/small_round_btn_size"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/key_on" 
+                android:visibility="invisible"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

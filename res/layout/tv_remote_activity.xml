@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/blue_background_color"
+    android:orientation="vertical" >
+
+
+    <RelativeLayout
+        android:id="@+id/firstRowBtns"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp" >
+
+        <ImageButton
+            android:id="@+id/powerBtn"
+            android:layout_width="@dimen/small_round_btn_size"
+            android:layout_height="@dimen/small_round_btn_size"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/small_round_btn_margin"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/power_switch" />
+
+        <Button
+            android:id="@+id/tvAvBtn"
+            android:layout_width="@dimen/small_round_btn_size"
+            android:layout_height="@dimen/small_round_btn_size"
+            android:layout_centerInParent="true"
+            android:background="@drawable/blue_round_background"
+            android:text="TV/AV"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/muteBtn"
+            android:layout_width="@dimen/small_round_btn_size"
+            android:layout_height="@dimen/small_round_btn_size"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/small_round_btn_margin"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/mute" />
+    </RelativeLayout>
+"
+
+    <RelativeLayout
+        android:id="@+id/secondRowBtns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp" >
+
+        <ImageButton
+            android:id="@+id/minusBtn"
+            android:layout_width="@dimen/small_round_btn_size"
+            android:layout_height="@dimen/small_round_btn_size"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/small_round_btn_margin"
+            android:background="@drawable/blue_round_background"
+            android:scaleType="fitXY"
+            android:src="@drawable/minus_symbol" />
+
+        <ImageButton
+            android:id="@+id/ninesDotsBtn"
+            android:layout_width="@dimen/small_round_btn_size"
+            android:layout_height="@dimen/small_round_btn_size"
+            android:layout_centerInParent="true"
+            android:background="@drawable/blue_round_background"
+            android:src="@drawable/stop_icon" />
+
+        <ImageButton
+            android:id="@+id/addBtn"
+            android:layout_width="@dimen/small_round_btn_size"
+            android:layout_height="@dimen/small_round_btn_size"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/small_round_btn_margin"
+            android:background="@drawable/blue_round_background"
+            android:scaleType="fitXY"
+            android:src="@drawable/plus_symbol" />
+    </RelativeLayout>
+
+    
+    <RelativeLayout
+        android:id="@+id/directions_layout"
+        android:layout_width="@dimen/direct_pad_width"
+        android:layout_height="@dimen/direct_pad_height"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp" >
+
+        <Button
+            android:id="@+id/centerOKBtn"
+            android:layout_width="@dimen/center_ok_btn_size"
+            android:layout_height="@dimen/center_ok_btn_size"
+            android:layout_centerInParent="true"
+            android:background="@drawable/center_ok"
+            android:text="OK"
+            android:textColor="@android:color/white"
+            android:textSize="40sp" />
+
+        <ImageButton
+            android:id="@+id/aboveBtn"
+            android:layout_width="140dp"
+            android:clickable="true"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:scaleType="fitXY"
+            android:background="@android:color/transparent"
+            android:src="@drawable/above_ok" />
+
+        <ImageButton
+            android:id="@+id/belowBtn"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="4dp"
+            android:scaleType="fitXY"
+            android:background="@android:color/transparent"
+            android:src="@drawable/below_ok" />
+
+        <ImageButton
+            android:id="@+id/leftBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="140dp"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:background="@android:color/transparent"
+            android:src="@drawable/left_ok" />
+
+        <ImageButton
+            android:id="@+id/rightBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="140dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+             android:scaleType="fitXY"
+            android:background="@android:color/transparent"
+            android:src="@drawable/right_ok" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bottomRowBtns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/menuBtn"
+            android:layout_width="@dimen/small_round_btn_size"
+            android:layout_height="@dimen/small_round_btn_size"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/small_round_btn_margin"
+            android:background="@drawable/blue_round_background"
+            android:text="@string/csst_rc_memu"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="@dimen/small_round_btn_size"
+            android:layout_height="@dimen/small_round_btn_size"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/small_round_btn_margin"
+            android:background="@drawable/blue_round_background"
+            android:src="@drawable/back_icon"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+
+</LinearLayout>

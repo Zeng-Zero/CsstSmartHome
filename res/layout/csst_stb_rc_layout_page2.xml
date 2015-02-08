@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 机顶盒第二页 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginBottom="20dip"
+    android:layout_marginTop="20dip"
+    android:gravity="center"
+    android:orientation="vertical" >
+    <!-- 快退、圆点、快进 -->
+    <LinearLayout
+        android:id="@+id/layout_01"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_marginBottom="20dip"
+        android:layout_marginTop="20dip"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal" >
+        <ImageButton
+            android:id="@+id/mBtnFR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/csst_rc_pre_btn_bg"
+            android:contentDescription="@null" />
+        <ImageButton
+            android:id="@+id/mBtnRecord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/csst_rc_pause_btn_bg"
+            android:contentDescription="@null" />
+        <ImageButton
+            android:id="@+id/mBtnFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/csst_rc_next_btn_bg"
+            android:contentDescription="@null" />
+    </LinearLayout>
+    <!-- 123 -->
+    <LinearLayout
+        android:id="@+id/layout_02"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_marginBottom="20dip"
+        android:layout_marginTop="20dip"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/mBtn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/csst_tv_btn_def_bg"
+            android:text="@string/csst_rc_1"
+            android:textColor="@color/white" />
+        <Button
+            android:id="@+id/mBtn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/csst_tv_btn_def_bg"
+            android:text="@string/csst_rc_2"
+            android:textColor="@color/white" />
+        <Button
+            android:id="@+id/mBtn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/csst_tv_btn_def_bg"
+            android:text="@string/csst_rc_3"
+            android:textColor="@color/white" />
+    </LinearLayout>
+    <!-- 456 -->
+    <LinearLayout
+        android:id="@+id/layout_03"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_marginBottom="20dip"
+        android:layout_marginTop="20dip"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal" >
+        <Button
+            android:id="@+id/mBtn4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/csst_tv_btn_def_bg"
+            android:text="@string/csst_rc_4"
+            android:textColor="@color/white" />
+        <Button
+            android:id="@+id/mBtn5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/csst_tv_btn_def_bg"
+            android:text="@string/csst_rc_5"
+            android:textColor="@color/white" />
+        <Button
+            android:id="@+id/mBtn6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/csst_tv_btn_def_bg"
+            android:text="@string/csst_rc_6"
+            android:textColor="@color/white" />
+    </LinearLayout>
+    <!-- 789 -->
+    <LinearLayout
+        android:id="@+id/layout_04"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_marginBottom="20dip"
+        android:layout_marginTop="20dip"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal" >
+        <Button
+            android:id="@+id/mBtn7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/csst_tv_btn_def_bg"
+            android:text="@string/csst_rc_7"
+            android:textColor="@color/white" />
+        <Button
+            android:id="@+id/mBtn8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/csst_tv_btn_def_bg"
+            android:text="@string/csst_rc_8"
+            android:textColor="@color/white" />
+        <Button
+            android:id="@+id/mBtn9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/csst_tv_btn_def_bg"
+            android:text="@string/csst_rc_9"
+            android:textColor="@color/white" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layout_05"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_marginBottom="20dip"
+        android:layout_marginTop="20dip"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal" >
+        <Button
+            android:id="@+id/mBtnDel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/csst_tv_btn_def_bg"
+            android:text="@string/csst_dvdrc_delete_key"
+            android:textColor="@color/white" />
+        <Button
+            android:id="@+id/mBtn0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/csst_tv_btn_def_bg"
+            android:text="@string/csst_rc_0"
+            android:textColor="@color/white" />
+        <Button
+            android:id="@+id/mBtnDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/csst_tv_btn_def_bg"
+            android:text="@string/csst_dvdrc_ok_key"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</LinearLayout>

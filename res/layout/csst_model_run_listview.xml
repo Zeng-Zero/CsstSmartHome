@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 	
+	添加定时界面
+ -->
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/addModelcontent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    >
+     <RelativeLayout
+        android:id="@+id/rl_add_model"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="6dp"
+        android:gravity="center"
+      >
+		<TextView 
+	    android:layout_height="match_parent"
+	    android:layout_width="fill_parent"
+	    android:id="@+id/tvclockrepeat_listview"
+	    android:layout_gravity="center"
+	    android:gravity="center"
+	    android:text="@string/csst_model_actionlocal"
+	    android:singleLine="true"
+	    android:textSize="@dimen/normal_textsize"
+	    android:layout_marginTop="10sp"
+	    />
+	 </RelativeLayout>
+</LinearLayout>

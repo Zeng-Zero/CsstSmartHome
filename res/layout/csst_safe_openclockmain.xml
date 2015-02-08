@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 	
+	添加情景模式界面
+ -->
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/addModelcontent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@color/currentbackground"
+    >
+	<!-- 标题栏 -->
+	<RelativeLayout 
+		android:id="@+id/layout_top"
+		android:layout_width="fill_parent"
+	    android:layout_height="50.0dip" >
+	    <include layout="@layout/csst_title_layout"/>
+	</RelativeLayout>
+	<!-- 分隔符 -->
+		<TextView 
+   		    android:layout_width="fill_parent"
+   		    android:layout_height="wrap_content"
+   		    android:textSize="@dimen/normal_textsize"
+   		    android:visibility="invisible"
+	    />
+		<!-- 情景模式图片-->
+ <!-- 选项 -->
+
+	 <RelativeLayout
+        android:id="@+id/rl_add_clock"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        >
+
+        <Button
+            android:id="@+id/btaddclock"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:background="@color/currentlistview"
+            android:gravity="center"
+            android:text="@string/csst_model_addclock"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/lv_clocklistview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0"
+        android:cacheColorHint="#00000000"  
+        >
+    </ListView>
+   		
+   
+   		
+   		
+</LinearLayout>

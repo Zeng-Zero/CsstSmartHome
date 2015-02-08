@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 	
+	添加情景模式界面
+ -->
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/addModelcontent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/currentbackground"
+    >
+   	<LinearLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/llnamemain"
+    android:orientation="vertical"
+    android:layout_margin="4sp"
+    android:background="@color/currentlistview"
+    >
+	<!-- 动作名称-->
+	<LinearLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:id="@+id/llname"
+	    android:orientation="horizontal"
+	    >
+ <!-- 名称输入标签 -->
+	<TextView 
+	    android:layout_height="wrap_content"
+	    android:layout_width="fill_parent"
+	    android:id="@+id/tvactionname"
+	    android:layout_gravity="center_horizontal"
+	    android:text="@string/csst_model_actionname"
+   	    android:paddingLeft="20dp"
+	    android:singleLine="true"
+	    android:layout_weight="1"
+	    android:textColor="@color/white"
+	    android:textSize="@dimen/normal_textsize"
+	    />
+	<TextView 
+	    android:layout_height="wrap_content"
+	    android:layout_width="fill_parent"
+	  	android:layout_weight="1"
+  	    android:textSize="@dimen/normal_textsize"
+	    android:layout_gravity="center_horizontal"
+	    android:gravity="center"    
+	    />
+	</LinearLayout><!-- 动作延时-->
+	<LinearLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:id="@+id/lldelaytime"
+	    android:orientation="horizontal"
+	    >
+	<TextView 
+	    android:layout_height="wrap_content"
+	    android:layout_width="fill_parent"
+	    android:id="@+id/tvactiondelay"
+	    android:layout_gravity="center_horizontal"
+	    android:text="@string/csst_model_actiondelaytime"
+   	    android:paddingLeft="20dp"
+	    android:singleLine="true"
+	    android:layout_weight="1"
+	    android:textSize="@dimen/normal_textsize"
+	    android:textColor="@color/white"
+	    />
+	<ImageView 
+	    android:layout_height="wrap_content"
+	    android:layout_width="fill_parent"
+	    android:id="@+id/arrow"
+	  	android:layout_weight="1"
+	  	android:src="@drawable/arrow"
+	  	android:layout_gravity="left"
+	    />
+	</LinearLayout>
+	
+	<!-- 动作位置-->
+	<LinearLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:id="@+id/llactionlocal"
+	    android:orientation="horizontal"
+	    >
+ <!-- 名称输入标签 -->
+	<TextView 
+	    android:layout_height="wrap_content"
+	    android:layout_width="fill_parent"
+	    android:id="@+id/tvactionlocal"
+	    android:layout_gravity="center_horizontal"
+	    android:text="@string/csst_model_actionlocal"
+   	    android:paddingLeft="20dp"
+	    android:singleLine="true"
+	    android:layout_weight="1"
+	    android:textColor="@color/white"
+	    android:textSize="@dimen/normal_textsize"
+	    />
+	<TextView 
+	    android:layout_height="wrap_content"
+	    android:layout_width="fill_parent"
+	  	android:layout_weight="1"
+ 	    android:layout_gravity="center_horizontal"
+	    android:gravity="center"  
+	  	 
+	    />
+	</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

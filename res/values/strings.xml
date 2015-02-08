@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ILIVE</string>
+    <string name="csst_adddevice">添加设备</string>
+    <string name="csst_addroom">添加房间</string>
+    <string name="menu_addmodel">添加模式</string>
+    <string name="menu_addhouse">添加场景</string>
+    <string name="csst_devicemanager">中控管理</string>
+    <string name="csst_Videomonitoring">视频监控</string>
+    <string name="csst_TimingSettings">安防报警</string>
+    <string name="csst_midcenterset">中控配置</string>
+    <string name="csst_runmanager">运行管理</string>
+    <string name="csst_datain">数据导入</string>
+    <string name="csst_dataout">数据导出</string>
+    <string name="csst_wendu">温度</string>
+    <string name="csst_shidu">湿度</string>
+    <string name="csst_wendu_param">℃</string>
+    <string name="csst_wendu_paramsample">0 ℃</string>
+    <string name="csst_shidu_param">%</string>
+    <string name="csst_shidu_paramsample">00RH%</string>
+    <string name="csst_shidu_rh">RH</string>
+    <string name="csst_please_input_floorname">请输入场景名</string>
+    <string name="csst_floorname_not_null">场景名不能为空</string>
+    <string name="csst_floorname_repeat">%1$s 场景已存在</string>
+    <string name="csst_del_floor_message">删除%1$s将会同时删除该场景下的房间及设备数据！</string>
+    <string name="csst_del_model_message">删除%1$s将会同时删除该场景下的动作数据！</string>
+    <string name="csst_add_room_empty_floor">请添加场景，没有依赖的场景。</string>
+    <string name="csst_same_room_message">该场景下存在相同的房间名字！</string>
+    <string name="csst_adddevice_empty_room">请添加房间，没有依赖的房间！</string>
+    <string name="csst_please_input_roomname">请输入房间名</string>
+    <string name="csst_roomname_not_null">房间名不能为空</string>
+    <string name="csst_roomname_repeat">房间已存在</string>
+    <string name="csst_net_config_ssid">WIFI</string>
+    <string name="csst_net_config_pawd">密码</string>
+    <string name="csst_net_config_show_pass">显示密码</string>
+    <string name="csst_net_config">配置</string>
+    <string name="csst_net_wifi_disEnabled">WIFI未打开</string>
+    <string name="csst_net_search_device">寻找设备,大概需要35S，请耐心等待！...</string>
+    <string name="csst_net_para_empty">WIFI或密码为空</string>
+    <string name="csst_net_config_fail">配置失败</string>
+    <string name="csst_net_config_sus">配置成功</string>
+    <string name="csst_net_config_find">发现设备</string>
+    <string name="csst_net_config_unfind">未发现设备</string>
+    <string name="csst_send_cmd_success">命令发送成功。</string>
+    <string name="csst_send_cmd_fail">命令发送失败。</string>
+    
+    <string name="csst_add_camera">请按此添加摄像机</string>
+    <string name="csst_add_camera_title">添加摄像机</string>
+    <string name="csst_modify_camera_title">修改摄像机</string>
+    <string name="csst_camera_name">相机名</string>
+    <string name="csst_camera_id">设备ID</string>
+    <string name="csst_camera_user">用户名</string>
+    <string name="csst_camera_pawd">密码</string>
+    <string name="csst_camera_name_hint">摄像机名称</string>
+    <string name="csst_camera_id_hint">摄像机UUID</string>
+    <string name="csst_camera_user_hint">请输入用户名</string>
+    <string name="csst_camera_pawd_hint">请输入密码</string>
+    <string name="csst_camera_defuser">admin</string>
+    <string name="csst_camera_name_empty">摄像机名字不能为空</string>
+    <string name="csst_camera_uuid_empty">UUID不能为空</string>
+    <string name="csst_camera_user_empty">用户名不能为空</string>
+    <string name="csst_camera_pswd_empty">密码不能为空</string>
+    <string name="csst_camera_name_exists">摄像机名字已经存在</string>
+    <string name="csst_camera_uuid_exists">摄像机已经存在</string>
+    <string name="csst_camera_search_message">正在搜索摄像机，请稍后...</string>
+    <string name="csst_camera_search_empty">没有发现摄像机设备,请重试...</string>
+    <string name="csst_camera_search_result">搜索结果</string>
+    <string name="csst_camera_refresh">刷新</string>
+    <string name="connecting">正在连接...</string>
+    <string name="pppp_status_disconnect">断线</string>
+    <string name="videoing">录像中...</string>
+    <string name="exit_show">   提示：</string>
+    <string name="exit_play_show">确认退出播放?</string>
+    <string name="eixt_show_toast">本地录像中，请先停止再退出！</string>
+    <string name="connected">已连接</string>
+    <string name="pwd_no_empty">密码不能为空</string>
+    <string name="password">密码:</string>
+    <string name="showpwd">显示密码</string>
+    <!-- 设置界面 -->
+	<string name="setting_camera">摄像机设置</string>
+	<string name="setting_wifi">Wifi设置</string>
+	<string name="setting_user">用户设置</string>
+	<string name="setting_ftp">Ftp设置</string>
+	<string name="setting_alerm">报警设置</string>
+	<string name="setting_time">设备时钟设置</string>
+	<string name="setting_mail">邮件设置</string>
+	<string name="setting_sdcard">SD卡设置</string>
+	<string name="datetime_setting">时间设置</string>
+	<string name="mail_setting">邮件设置</string>
+	<string name="ftp_setting">Ftp设置</string>
+	<string name="alerm_setting">报警设置</string>
+    
+    <string name="wifi">Wifi</string>
+	<string name="wifi_checkmode">验证类型:</string>
+	<string name="wifi_manager">管理WiFi网络</string>
+	<string name="wifi_signal_strong">信号强度:</string>
+	<string name="wifi_safe">安全性:</string>
+	<string name="wifi_no_safe">无</string>
+	<string name="wifi_set_failed">WiFi设置失败</string>
+	<string name="wifi_set_success">WiFi设置成功,摄像机正在重启...</string>
+	<string name="wifi_not_connected">未连接</string>
+	<string name="wifi_scanning">WiFi正在扫描,请稍候...</string>
+	<string name="wifi_scan_failed">WiFi扫描失败</string>
+	<string name="wifi_getparams">正在获取WiFi信息...</string>
+	<string name="wifi_getparams_failed">获取WiFi信息失败</string>
+	<string name="wifi_notchange">WiFi没有更改,不需要设置</string>
+	<string name="wifi_pwd_toolong">密码不能超过128位</string>
+	<!-- User 设置 -->
+	<string name="user_admin">管理员</string>
+	<string name="user_operator">操作者</string>
+	<string name="user_visitor">参观者</string>
+	<string name="user_setting">用户设置</string>
+	<string name="user_set_failed">用户设置失败</string>
+	<string name="user_set_success">用户设置成功,摄像机正在重启</string>
+	<string name="user_name_no_empty">用户名不能为空</string>
+	<string name="user_name">用户名:</string>
+	<string name="user_getparams">正在获取用户信息...</string>
+	<string name="user_getparams_failed">获取用户信息失败</string>
+	<string name="user_name_toolong">用户名不能超过64位</string>
+	<string name="user_pwd_toolong">密码不能超过64位</string>
+
+	<!-- Alerm 设置 -->
+	<string name="alerm_detector_layout">移动侦测布防</string>
+	<string name="alerm_detector_sensitivity">移动侦测灵敏度</string>
+	<string name="alerm_sensitivity_desc">(数值越小越灵敏)</string>
+	<string name="alerm_io_layout">报警输入布防</string>
+	<string name="alerm_trigger_level">触发电平</string>
+	<string name="alerm_presetsit">报警时预置位联动</string>
+	<string name="alerm_io_move">报警后 IO 联动</string>
+	<string name="alerm_ioout_level">输出电平</string>
+	<string name="alerm_mail_inform">报警后邮件通知</string>
+	<string name="alerm_upload_picture">报警后上传图片</string>
+	<string name="alerm_upload_picture_time_interval"> 上传图片时间间隔(秒)</string>
+	<string name="alerm_trigger_event">报警触发事件</string>
+	<string name="alerm_set_failed">报警设置失败</string>
+	<string name="alerm_ioin_levelhight">高电平</string>
+	<string name="alerm_ioin_levellow">低电平</string>
+	<string name="alerm_getparams">正在获取报警信息...</string>
+	<string name="alerm_getparams_failed">获取报警信息失败</string>
+	<string name="alerm_preset_no">无</string>
+	<string name="alerm_uploadinterval_toolong">上传时间不能超过3600秒</string>
+	<string name="alerm_uploadpic_prompt">0或空表示不上传图片</string>
+	<string name="alerm_log">报警日志</string>
+	<string name="default_alerm_motion_alarm">移动侦测报警</string>
+	<string name="default_alerm_gpio_alarm">IO联动报警</string>
+	<string name="alerm_no_log">无报警日志</string>
+	<string name="alerm_record">报警后录像</string>
+
+	<!-- 时间设置 -->
+	<string name="date_device_time">设备时钟时间</string>
+	<string name="date_device_timezone">设备时区设定</string>
+	<string name="date_ntp_server_auto_check">使用 NTP服务器自动校时</string>
+	<string name="date_phone_time_auto_check">使用手机时间校准设备时钟</string>
+	<string name="date_ntp_server">NTP服务器</string>
+	<string name="date_middle_island">(GMT-11:00)中途岛,萨摩亚群岛</string>
+	<string name="date_hawaii">(GMT -10:00) 夏威夷</string>
+	<string name="date_alaska">(GMT-09:00)阿拉斯加</string>
+	<string name="date_pacific_time">(GMT-08:00)太平洋时间(美国和加拿大)</string>
+	<string name="date_mountain_time">(GMT-07:00)山地时间(美国和加拿大)</string>
+	<string name="date_middle_part_time">(GMT-06:00)中部时间(美国和加拿大),墨西哥城</string>
+	<string name="date_eastern_time">(GMT-05:00)东部时间(美国和加拿大),利马,波哥大</string>
+	<string name="date_ocean_time">(GMT-04:00)大西洋时间(加拿大),圣地亚哥,拉巴斯</string>
+	<string name="date_newfoundland">(GMT-03:30)纽芬兰</string>
+	<string name="date_brasilia">(GMT-03:00)巴西利亚,布宜若斯艾丽斯,乔治敦</string>
+	<string name="date_center_ocean">(GMT-02:00)中大西洋</string>
+	<string name="date_cape_verde_island">(GMT-01:00)佛得角群岛</string>
+	<string name="date_greenwich">(GMT)格林威治平时,伦敦,里斯本,卡萨布兰卡</string>
+	<string name="date_brussels">(GMT+01:00)布鲁赛尔,巴黎,柏林,罗马,马德里,斯多哥尔摩, 贝尔格莱德, 布拉格
+	</string>
+	<string name="date_athens">(GMT +02:00) 雅典, 耶路撒冷, 开罗, 赫尔辛基</string>
+	<string name="date_nairobi">(GMT +03:00) 内罗毕, 利雅得, 莫斯科</string>
+	<string name="date_teheran">(GMT +03:30) 德黑兰</string>
+	<string name="date_baku">(GMT +04:00) 巴库, 第比利斯, 阿布扎比, 马斯科特</string>
+	<string name="date_kebuer">(GMT +04:30) 科布尔</string>
+	<string name="date_islamabad">(GMT +05:00) 伊斯兰堡, 卡拉奇, 塔森干</string>
+	<string name="date_calcutta">(GMT +05:30) 加尔各答, 孟买, 马德拉斯, 新德里</string>
+	<string name="date_alamotu">(GMT +06:00) 阿拉木图, 新西伯利亚, 阿斯塔南, 达尔</string>
+	<string name="date_bangkok">(GMT +07:00) 曼谷, 河内, 雅加达</string>
+	<string name="date_beijing">(GMT +08:00) 北京, 新加坡, 台北</string>
+	<string name="date_seoul">(GMT +09:00) 首尔, 雅库茨克, 东京</string>
+	<string name="date_darwin">(GMT +09:30) 达尔文</string>
+	<string name="date_guam">(GMT +10:00) 关岛, 墨尔本, 悉尼, 莫尔兹比港, 符拉迪沃斯托克</string>
+	<string name="date_suolumen">(GMT +11:00)马加丹,所罗门群岛, 新喀里多尼亚</string>
+	<string name="date_auckland">(GMT +12:00) 奥克兰, 惠灵顿, 斐济</string>
+	<string name="date_ntp_server_time_nist_gov">time.nist.gov</string>
+	<string name="date_ntp_server_time_kriss_re_kr">time.kriss.re.kr</string>
+	<string name="date_ntp_server_time_windows_com">time.windows.com</string>
+	<string name="date_ntp_server_time_nuri_net">time.nuri.net</string>
+	<string name="date_setting_success">设备时钟时间设置成功</string>
+	<string name="date_setting_failed">设备时钟时间设置失败</string>
+	<string name="date_get_params">正在获取时钟信息...</string>
+
+	<!-- 邮件设置 -->
+	<string name="mail_sender">发送者</string>
+	<string name="mail_smtp_server">SMTP服务器</string>
+	<string name="mail_smtp_port">SMTP端口</string>
+	<string name="mail_check">需要验证</string>
+	<string name="mail_ssl">SSL</string>
+	<string name="mail_ssl_none">NONE</string>
+	<string name="mail_ssl_ssl">SSL</string>
+	<string name="mail_ssl_tls">TLS</string>
+	<string name="mail_smtp_user">SMTP用户</string>
+	<string name="mail_smtp_pwd">SMTP密码</string>
+	<string name="mail_receiver1">接受者1</string>
+	<string name="mail_receiver2">接受者2</string>
+	<string name="mail_receiver3">接受者3</string>
+	<string name="mail_receiver4">接受者4</string>
+	<string name="mail_163">smtp.163.com</string>
+	<string name="mail_126">smtp.126.com</string>
+	<string name="mail_sina">smtp.sina.com</string>
+	<string name="mail_yahoo_com">smtp.mail.yahoo.com</string>
+	<string name="mail_sohu">smtp.sohu.com</string>
+	<string name="mail_yeah">smtp.yeah.net</string>
+	<string name="mail_tom">smtp.tom.com</string>
+	<string name="mail_21cn">smtp.21cn.com</string>
+	<string name="mail_qq">smtp.qq.com</string>
+	<string name="mail_gmail">smtp.gmail.com</string>
+	<string name="mail_eyou">smtp.eyou.com</string>
+	<string name="mail_263">smtp.263.net</string>
+	<string name="mail_setting_success">邮件设置成功</string>
+	<string name="mail_setting_failed">邮件设置失败</string>
+	<string name="mail_getparams">正在获取邮件信息...</string>
+
+	<!-- Ftp设置 -->
+	<string name="ftp_server">FTP服务器</string>
+	<string name="ftp_port">FTP端口</string>
+	<string name="ftp_user">FTP用户</string>
+	<string name="ftp_pwd">FTP密码</string>
+	<string name="ftp_upload_interval_time">上传图片时间间隔(秒)</string>
+	<string name="ftp_upload_prompt">空或者0表示不定时上传图片</string>
+	<string name="ftp_setting_success">Ftp设置成功</string>
+	<string name="ftp_setting_failed">Ftp设置失败</string>
+	<string name="ftp_getparams">正在获取Ftp信息...</string>
+
+	<!-- 摄像机 SDCard 设置 -->
+	<string name="sdcard_getparams">正在获取SDCard信息...</string>
+	<string name="sdcard_total">SD卡总容量(M):</string>
+	<string name="sdcard_remain">SD卡剩余量(M):</string>
+	<string name="sdcard_state">SD卡状态:</string>
+	<string name="sdcard_format">格式化</string>
+	<string name="sdcard_inserted">SD卡已经插入</string>
+	<string name="sdcard_no_inserted">没有插SD卡</string>
+	<string name="sdcard_coverage">录像覆盖:</string>
+	<string name="sdcard_recordlength">录像时长(分钟):</string>
+	<string name="sdcard_recordtime">定时录像:</string>
+	<string name="sdcard_schedule">录像设置</string>
+	<string name="sdcard_range">范围5-180</string>
+	<string name="sdcard_set_failed">SD卡设置失败</string>
+	<string name="sdcard_set_success">SD卡设置成功</string>
+
+	<!-- Ptz设置 -->
+	<!-- 查看本地图片界面 -->
+	<string name="check_localpic">查看快照</string>
+	<string name="takepicture_time">时间:</string>
+	<string name="picture_sum">张</string>
+	<string name="delete_local_picture">删除该照片</string>
+	<string name="delete_local_all_picture">删除所有照片</string>
+	<string name="sum_pic">共: </string>
+	<string name="localpic_no">沒有照片</string>
+	<string name="local_picture">本地图片</string>
+
+	<!-- 查看远程图片界面 -->
+	<string name="remote_pic_offline">摄像机不在线, 无法播放远程图片</string>
+
+	<!-- 查看本地视频界面 -->
+	<string name="check_localvid">查看本地</string>
+	<string name="local_video_date">录像时间:</string>
+	<string name="local_video_badfile">文件已损坏</string>
+
+	<!-- 查看远程视频界面 -->
+	<string name="remote_video_title">远程录像</string>
+	<string name="no_video">没有远程录像文件</string>
+	<string name="remote_video_getparams">正在获取远程录像信息...</string>
+	<string name="remote_video_offline">摄像机不在线, 无法播放远程录像</string>
+	<string name="remote_start_prompt">开始日期不能大于结束日期</string>
+	<string name="remote_end_prompt">结束日期不能小于开始日期</string>
+	<string name="remote_to">至</string>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <string name="csst_camera_offline">摄像机不在线，是否链接？</string>
+    <string name="csst_camera_pppp_status_unknown">未知状态</string>
+	<string name="csst_camera_pppp_status_connecting">正在连接</string>
+	<string name="csst_camera_pppp_status_online">在线</string>
+	<string name="csst_camera_pppp_status_disconnect">断线</string>
+	<string name="csst_camera_pppp_status_connect_failed">连接失败</string>
+	<string name="csst_camera_pppp_status_pwd_error">密码错误</string>
+	<string name="csst_camera_pppp_status_invalid_id">ID号无效</string>
+	<string name="csst_camera_pppp_dev_type_unknown">未知类型</string>
+	<string name="csst_camera_device_not_on_line">摄像机不在线</string>
+    <string name="csst_camera_pppp_status_connect_timeout">连接超时</string>
+    <string name="csst_camera_pppp_status_initialing">已连接, 正在初始化</string>
+    <string name="csst_camera_connecting">摄像机连接中，请稍后....</string>
+    
+    <string name="csst_study_key_code_message">请把要学习的遥控器按键对着中控按下进行学码 </string>
+    <string name="csst_study_code_message">请将要学码的按键遥控器对准中控,并长按按键。正在学码，请稍后...</string>
+    <string name="csst_study_success">学码成功...</string>
+    <string name="csst_study_fail">学码失败...</string>
+    <string name="csst_study_finish">学码结束...</string>
+    
+    <!-- 设备 -->
+    <string name="csst_device_name">设备名称：</string>
+    <string name="csst_device_rct">遥控模板：</string>
+    <string name="csst_device_bindid">设备   ID</string>
+    <string name="csst_device_scan">扫描条码</string>
+    <string name="csst_device_search">网络搜索</string>
+    <string name="csst_pick_preset">预设图片</string>
+    <string name="csst_pick_tack">拍照图片</string>
+    <string name="csst_album_tack">相册图片</string>
+    <string name="csst_device_name_not_null">设备不能为空</string>
+    <string name="csst_home_exists_device">该房间已存在此设备！</string>
+    <string name="csst_device_id_not_null">设备ID不能为空</string>
+    <string name="csst_device_id_scan_failed">设备ID扫描失败！</string>
+    <string name="csst_device_icon_empty">设备图片未设置！</string>
+    <string name="csst_device_tv">电视</string>
+    <string name="csst_device_kt">空调</string>
+    <string name="csst_device_washer">洗衣机</string>
+    <string name="csst_device_lamp">灯泡</string>
+    <string name="csst_device_miscro">微波炉</string>
+    <string name="csst_device_curtain">窗帘</string>
+    <string name="csst_device_tvt">机顶盒</string>
+    <string name="csst_ok">确定</string>
+    <string name="csst_cancel">取消</string>
+   	<string name="csst_delete">删除</string>
+   	<string name="csst_update">修改</string>
+   	<string name="csst_update_success">更新成功</string>
+   	<string name="csst_update_failed">更新失败</string>
+   	<string name="csst_delete_success">删除成功</string>
+   	<string name="csst_delete_failed">删除失败</string>
+   	<string name="csst_back">返回</string>
+	<string name="csst_done">完成</string>
+	<string name="csst_scan_tips">将二维码图片对准扫描框即可自动扫描</string>
+	<string name="csst_save_error">数据存储错误，请与厂商联系！</string>
+	
+	<!-- 电视遥控器按键 -->
+	<string name="csst_tvrc_signal_key">信号源</string>
+    <string name="csst_tvrc_image_key">图像</string>
+    <string name="csst_tvrc_sound_key">声音</string>
+	<string name="csst_tvrc_add">+</string>
+	<string name="csst_tvrc_del">-</string>
+    <string name="csst_tvrc_vol_add">Vol+</string>
+    <string name="csst_tvrc_vol_del">Vol-</string>
+    <string name="csst_tvrc_ch_add">Ch+</string>
+    <string name="csst_tvrc_ch_del">Ch-</string>
+    <string name="csst_rc_0">0</string>
+	<string name="csst_rc_1">1</string>
+	<string name="csst_rc_2">2</string>
+	<string name="csst_rc_3">3</string>
+	<string name="csst_rc_4">4</string>
+	<string name="csst_rc_5">5</string>
+	<string name="csst_rc_6">6</string>
+	<string name="csst_rc_7">7</string>
+	<string name="csst_rc_8">8</string>
+	<string name="csst_rc_9">9</string>
+	
+	<string name="csst_tvrc_usb_key">USB</string>
+	<string name="csst_tvrc_audio_key">AUDIO</string>
+	<string name="csst_tvrc_info_key">INFO</string>
+	<string name="csst_tvrc_radio_key">TV/RADIO</string>
+	<string name="csst_tvrc_rstd_key">RSTD</string>
+	<string name="csst_tvrc_shift_key">T-Shift</string>
+	<string name="csst_tvrc_pause_key">Pause</string>
+	<string name="csst_tvrc_sub_key">SUB</string>
+	<string name="csst_tvrc_menu_key">MENU</string>
+	<string name="csst_tvrc_exit_key">EXIT</string>
+	<string name="csst_tvrc_epg_key">EPG</string>
+	<string name="csst_tvrc_fav_key">FAV</string>
+	<string name="csst_tvrc_ok_key">OK</string>
+    <!-- 机顶盒遥控器  邓波 -->
+    <string name="csst_stbrc_homepage_key">主页</string>
+    <string name="csst_stbrc_info_key">信息</string>
+    <string name="csst_stbrc_back_key">返回</string>
+    <string name="csst_stbrc_exit_key">退出</string>
+    <string name="csst_stbrc_volup_key">音量+</string>
+    <string name="csst_stbrc_voldown_key">音量-</string>
+    <string name="csst_stbrc_tvprogram_key">节目</string>
+    <string name="csst_stbrc_setting_key">设置</string>
+    <string name="csst_stbrc_tvav_key">TV/AV</string>
+    <string name="csst_stbrc_audio_key">声道</string>
+    <string name="csst_stbrc_guide_key">导视</string>
+    <string name="csst_stbrc_nextpage_key">下一页</string>
+    <string name="csst_stbrc_lastpage_key">上一页</string>
+    <string name="csst_stbrc_itv_key">iTV</string>
+    
+    <string name="csst_stbrc_add_key">ADD</string>
+    <string name="csst_stbrc_stop_key">STOP</string>
+    <string name="csst_stbrc_dec_key">DEC</string>
+
+    <!-- 空调遥控器 -->
+    <string name="csst_airconditionrc_high_key">升温</string>
+    <string name="csst_airconditionrc_low_key">降温</string>
+    <string name="csst_airconditionrc_speed_key">风速</string>
+    <string name="csst_airconditionrc_cold_key">制冷</string>
+    <string name="csst_airconditionrc_warm_key">制热</string>
+    <string name="csst_airconditionrc_updown_key">上下扫风</string>
+    <string name="csst_airconditionrc_leftright_key">左右扫风</string>
+
+    
+    <!-- DVD -->
+    <string name="csst_dvdrc_delete_key">删除</string>
+    <string name="csst_dvdrc_ok_key">确定</string>
+    <string name="csst_dvdrc_menu_key">目录</string>
+    <string name="csst_dvdrc_popup_key">弹出</string>
+    <string name="csst_dvdrc_fwd_key">快进</string>
+    <string name="csst_dvdrc_rev_key">快退</string>
+    <string name="csst_dvdrc_next_key">下一首</string>
+    <string name="csst_dvdrc_last_key">上一首</string>
+    <string name="csst_dvdrc_play_key">播放</string>
+    <string name="csst_dvdrc_pause_key">暂停</string>
+    <string name="csst_dvdrc_stop_key">停止</string>
+    <string name="csst_dvdrc_replay_key">回放</string>
+    <string name="csst_dvdrc_leftaudio_key">左声道</string>
+    <string name="csst_dvdrc_rightaudio_key">右声道</string>
+    <string name="csst_dvdrc_audio_key">立体声</string>
+    <string name="csst_dvdrc_img_key">画面</string>
+    
+    
+    
+    <!-- DVD -->
+   <string name="csst_dvdzql_power_key">开关</string>
+    <string name="csst_dvdzql_mute_key">静音</string>
+    <string name="csst_dvdzql_soundchanel_key">声道</string>
+    <string name="csst_dvdzql_uppage_key">下一页</string>
+    <string name="csst_dvdzql_downpage_key">上一页</string>
+    <string name="csst_dvdzql_stop_key">停止</string>
+    <string name="csst_dvdzql_next_key">下一首</string>
+    <string name="csst_dvdzql_last_key">上一首</string>
+    <string name="csst_dvdzql_puase_key">暂停</string>
+    <string name="csst_dvdzql_up_key">上</string>
+    <string name="csst_dvdzql_down_key">下</string>
+    <string name="csst_dvdzql_left_key">左</string>
+    <string name="csst_dvdzql_right_key">右</string>
+    <string name="csst_dvdzql_OK_key">OK</string>
+    <string name="csst_dvdzql_setting_key">设置</string>
+    <string name="csst_dvdzql_menu_key">菜单</string>
+    <string name="csst_dvdzql_back_key">返回</string>
+    
+    
+     <!-- sound -->
+    <string name="csst_sound_power_key">开关</string>
+    <string name="csst_sound_mute_key">静音</string>
+    <string name="csst_sound_soundchanel_key">声道</string>
+    <string name="csst_sound_uppage_key">下一页</string>
+    <string name="csst_sound_downpage_key">上一页</string>
+    <string name="csst_sound_stop_key">停止</string>
+    <string name="csst_sound_next_key">下一首</string>
+    <string name="csst_sound_last_key">上一首</string>
+    <string name="csst_sound_puase_key">暂停</string>
+    <string name="csst_sound_up_key">上</string>
+    <string name="csst_sound_down_key">下</string>
+    <string name="csst_sound_left_key">左</string>
+    <string name="csst_sound_right_key">右</string>
+    <string name="csst_sound_OK_key">OK</string>
+    <string name="csst_sound_add_key">加</string>
+    <string name="csst_sound_dec_key">减</string>
+    <string name="csst_sound_setting_key">设置</string>
+    <string name="csst_sound_menu_key">菜单</string>
+    <string name="csst_sound_back_key">返回</string>
+    
+	<!-- 窗帘遥控器 -->
+	<string name="csst_curtainrc_open_key">开关</string>
+	<string name="csst_curtainrc_pause_key">暂停</string>
+	<string name="csst_curtainrc_close_key">关闭</string>
+	<!-- 风扇 -->
+	<string name="csst_electricfan_menu_1">风量</string>
+	<string name="csst_electricfan_menu_2">摇头</string>
+	<string name="csst_electricfan_menu_3">定时/预约</string>
+	<string name="csst_electricfan_menu_4">开关</string>
+	
+	
+	<!-- 情景模式 -->
+	<string name="csst_model_name_tip">请输入情景模式名称</string>
+	<string name="csst_model_name_tag">情景名称：</string>
+	<string name="csst_model_name_null_tip">情景名称不能为空</string>
+	<string name="csst_model_name_exit_tag">情景名称已存在</string>
+	<string name="csst_addmodel_title">添加情景模式</string>
+	 <string name="csst_model_readystartup">模式已经开启</string>
+	<string name="csst_model_actionadd">添加动作</string>
+	<string name="csst_model_whichaction">调用动作：</string>
+	<string name="csst_model_whichaction_null_tip">请选择调用动作</string>
+	<string name="csst_model_actionname">动作名称：</string>
+	<string name="csst_model_actionname_null_tip">动作名称不能为空</string>
+	<string name="csst_model_actionname_exit_tip">动作名称已存在</string>
+	<string name="csst_model_actionnametip">请输入动作名称</string>
+	<string name="csst_model_actiondelaytime">动作延时：</string>
+	<string name="csst_model_actiondelaytime_null_tip">动作延时不能为空</string>
+	<string name="csst_model_actiondelaytimetip">请输入延时时间</string>
+	<string name="csst_model_actionlocal_only">位置</string>
+	<string name="csst_model_actionlocal">动作位置：</string>
+	<string name="csst_model_actionlocalnulltip">请选择调用动作位置！</string>
+	<string name="csst_model_actionnamenulltip">动作名称不能为空</string>
+	<string name="csst_model_actiondelaytimenulltip">动作延时时间不能为空</string>
+	<string name="csst_seconds">秒</string>
+	<string name="csst_model_edit">编辑</string>
+	<string name="csst_model_clockopen">开启模式</string>
+	<string name="csst_model_runmodel_suc">执行情景模式完成</string>
+	<string name="csst_model_runmodel_fail">执行情景模式失败</string>
+	<string name="csst_model_cancel">取消</string>
+	<string name="csst_model_delete">删除</string>
+	<string name="csst_model_autoopen">自动开启</string>
+	<string name="csst_model_clocktime">定时时间:</string>
+	<string name="csst_model_clockname">定时名称:</string>
+	<string name="csst_model_clocknamenulltip">定时名称不能为空</string>
+	<string name="csst_model_clocknamenrepeat">改定时名称已经存在请重新命名</string>
+	<string name="csst_model_clockdaynulltip">请选择重复时间</string>
+	<string name="csst_model_clocknametip">请输入定时名称</string>
+	<string name="csst_model_clockaddsuc">添加定时成功！</string>
+	<string name="csst_model_clockdelettip">确定要删除该定时时间！</string>
+	<string name="csst_model_repeat">重复:</string>
+	<string name="csst_model_timesetting">时间设置</string>
+	<string name="csst_model_addclock">添加定时</string>
+	<string name="csst_model_sunday">日</string>
+	<string name="csst_model_monday">一</string>
+	<string name="csst_model_week1">周一  </string>
+	<string name="csst_model_week2">周二  </string>
+	<string name="csst_model_week3">周三  </string>
+	<string name="csst_model_week4">周四  </string>
+	<string name="csst_model_week5">周五  </string>
+	<string name="csst_model_week6">周六  </string>
+	<string name="csst_model_week7">周日  </string>
+	
+	
+	<string name="csst_model_tuesday">二</string>
+	<string name="csst_model_wednseday">三</string>
+	<string name="csst_model_thurseday">四</string>
+	<string name="csst_model_friday">五</string>
+	<string name="csst_model_saturday">六</string>
+	<string name="csst_model_insert">插入</string>
+	<string name="csst_model_hour">时</string>
+	<string name="csst_model_mine">分</string>
+	
+	
+	
+	
+	
+	
+	<!-- 设备编辑&设置 -->
+	<string-array name="csst_device_modify_and_set">
+	    <item>设置</item>
+	    <item>修改</item>
+	    <item>删除</item>
+	</string-array>
+	<!-- 设备编辑 -->
+	<string-array name="csst_device_modify">
+	    <item>修改</item>
+	    <item>删除</item>
+	</string-array>
+	<!-- 房间编辑 -->
+	<string-array name="csst_floor_modify">
+	    <item>重命名</item>
+	    <item>删除</item>
+	</string-array>
+	
+	<string-array name="csst_clockopendelet">
+	    <item>删除</item>
+	    <item>取消</item>
+	</string-array>
+	
+	<string-array name="csst_remote_control_key">
+	    <item> </item>
+	    <item>电视</item>
+	    <item>空调</item>
+	    <item>机顶盒</item>
+	    <item>DVD</item>
+	    <item>音响</item>
+	    <item>窗帘</item>
+	    <item>风扇</item>
+	</string-array>
+	<integer-array name="csst_remote_control_value">
+	    <item>0</item>
+	    <item>1</item>
+	    <item>2</item>
+	    <item>3</item>
+	    <item>4</item>
+	    <item>5</item>
+	    <item>6</item>
+	    <item>7</item>
+	</integer-array>
+	
+	<!-- 提示 -->
+	<string name="dialognotice">提示</string>
+    <string name="exittip">确定退出此程序！</string>
+   
+	 
+	 <!-- CLOCK  -->
+	 
+	  <string name="hello">Hello World, DeskClockMainActivity!</string>
+    <string name="label">"标签"</string>
+    <string name="alarm_list_title">"闹钟"</string>
+    <string name="add_alarm">"添加玲闹钟"</string>
+    <string name="desk_clock_button_description">"时钟显示"</string>
+    <string name="default_label">"闹钟"</string>
+    <string name="menu_desk_clock">"座钟"</string>
+    <string name="menu_edit_alarm" >"修改闹钟设置"</string>
+    <string name="enable_alarm">"启用闹钟"</string>
+    <string name="delete_alarm">"取消闹钟"</string>
+    <string name="disable_alarm">"停用闹钟"</string>
+    <string name="delete_alarm_confirm">"将会取消此闹钟。"</string>
+    <string name="alarm_repeat">"重复"</string>
+    <string name="alarm_vibrate">"振动"</string>
+    <string name="alert">"铃声"</string>
+    <string name="time">"时间"</string>
+    <string name="set_alarm">"设置闹钟"</string>
+    
+    <string name="done">"完成"</string>
+    <string name="revert">"还原"</string>
+    <string name="delete">"删除闹钟"</string>
+    <string name="alarm_alert_dismiss_text">"取消"</string>
+    <string name="alarm_volume_title">"闹钟音量"</string>
+    <string name="alarm_volume_summary">"设置闹钟音量"</string>
+    <string name="silent_alarm_summary">"静音"</string>
+    <string name="alarm_notify_text">"选择暂停或关闭此闹钟。"</string>
+    <string name="alarm_alert_snooze_text">"暂停再响"</string>
+
+    <string name="day">"1 天"</string>
+    <string name="hour">"1 小时"</string>
+    <string name="minute">"1 分钟"</string>
+    <string name="every_day">"每天"</string>
+    <string name="never">"一律不"</string>
+    <string name="day_concat">", "</string>
+    <string name="clock_instructions">"选择要显示的时钟。"</string>
+    <string name="analog_gadget">"模拟时钟"</string>
+    <string name="settings">"设置"</string>
+    <string name="alarm_in_silent_mode_title">"静音模式下闹钟响"</string>
+    <string name="alarm_in_silent_mode_summary">"手机处于静音模式时，闹钟仍会响"</string>
+    <string name="snooze_duration_title">"再响间隔"</string>
+  <string-array name="snooze_duration_entries">
+    <item msgid="8337408933053603125">"5 分钟"</item>
+    <item msgid="5294206441496024610">"10 分钟"</item>
+    <item msgid="2165904039211935470">"15 分钟"</item>
+    <item msgid="7248236967714374250">"20 分钟"</item>
+    <item msgid="738394723625179423">"25 分钟"</item>
+    <item msgid="1180222611308391616">"30 分钟"</item>
+  </string-array>
+  <string-array name="snooze_duration_values">
+    <item msgid="3655014754453084122">"5"</item>
+    <item msgid="8939029597449573449">"10"</item>
+    <item msgid="3922647341176353315">"15"</item>
+    <item msgid="5821804105985044459">"20"</item>
+    <item msgid="6048861883552402852">"25"</item>
+    <item msgid="2740866721232379791">"30"</item>
+  </string-array>
+  <string name="alarm_klaxon_service_desc">"在 DeskClock 中设置的闹钟铃声播放服务。"</string>
+  <string name="device_add_research">"搜索设备"</string>
+  <string name="device_add_bang">"绑定插座"</string>
+  <string name="device_add_cloud">"云遥控"</string>
+  <string name="device_add_custom">"自定义遥控"</string>
+  
+  <string name="csst_jiaquan">空气质量</string>
+  <string name="csst_jiaquan_paramsample">0.00mg/m2</string>
+  <string name="csst_jiaquan_param">mg/m2</string>
+  <string name="csst_jiaquan_rh">HCHO</string>
+  
+  
+  <string name="csst_adddevice_research_finish">搜素结束...</string>
+  <string name="csst_adddevice_research_message">正在学码，请稍后...</string>
+  
+  <string name="csst_adddevice_research_device_message">请您按住要搜索的设备开关使其指示灯处于闪烁状态。\n正在搜索，请稍后...</string>
+  
+   <string name="csst_adddevice_research_success">搜索成功...</string>
+   <string name="csst_adddevice_research_fail">搜索失败...</string>
+   <string name="csst_adddevice_switch">面板开关</string>
+   <string name="csst_adddevice_switch_one">一位面板</string>
+   <string name="csst_adddevice_switch_two">二位面板</string>
+   <string name="csst_adddevice_switch_three">三位面板</string>
+   <string name="csst_adddevice_switch_fore">四位面板</string>
+   <string name="csst_adddevice_charge">插座</string>
+   <string name="csst_adddevice_chargemany">排插</string>
+   
+   <string name="csst_adddevice_chargetip">搜索到插座，你可以单独使用也可以使用跟遥控器绑定使用</string>
+   
+   <string name="csst_autotextview_title">本公司即将推出集甲醛、智能插座、遥控宝于一体的智能家居系统</string>
+    
+   <string name="csst_offline_tip">设备不在线，请确保设备处于上电状态！</string>
+     
+   <string name="csst_configdevice_tip">未进行设备配置，请在“中控管理”->“中控管理”中进行设备配置</string>
+   
+   
+   
+   
+   <string name="switch_all_on">All On</string>
+   <string name="switch_all_off">All Off</string>
+   
+   <string name="csst_send_cmd">发送指令</string>
+   <string name="csst_triple_start_msg">正在搜索设备</string>
+   
+   <!-- safe -->
+   <string name="csst_safe_title">安防设置</string>
+   <string name="csst_safe_search">搜索传感设备</string>
+   <string name="csst_safe_smoke">烟雾</string>
+   <string name="csst_safe_door">门磁</string>
+   <string name="csst_safe_hr">热红外</string>
+   <string name="csst_safe_mansetting">手动布防/撤防</string>
+   <string name="csst_safe_autosetting">自动布防/撤防</string>
+   <string name="csst_safe_addphonenumber_tip">增加报警电话号码</string>
+   <string name="csst_safe_deletephonenumber_tip">删除报警电话号码</string>
+   <string name="csst_safe_getphonenumber_tip">获取报警电话号码</string>
+   <string name="csst_safe_inputphonenumber_tip">请输入电话号码</string>
+   <string name="csst_safe_addphonenumber_null">添加报警电话号码不能为空</string>
+   <string name="csst_safe_phonenumber_leag">电话号码不正确</string>
+   <string name="csst_safe_deletephonenumber_null">请输入电话号码</string>
+   <string name="csst_safe_search_sensor">请触发要被添加的报警设备\n使其发出无线报警信号等待中控学码</string>
+   <string name="csst_please_input_sensorname">请输入传感器名称</string>
+   <string name="csst_please_input_sensorname_nulltip">传感器名称不能为空</string>
+   <string name="csst_please_input_sensorname_repeat">该传感器已添加</string>
+   
+   <string name="csst_safe_search_failtip">搜索结束无传感器设备</string>
+   <string name="csst_safe_arm_suc">布防成功</string>
+   <string name="csst_safe_arm_fail">布防失败</string>
+   <string name="csst_safe_disarm_suc">撤防成功</string>
+   <string name="csst_safe_disarm_fail">撤防失败</string>
+   <string name="csst_safe_addnumber_suc">增加号码成功</string>
+   <string name="csst_safe_addnumber_fail">增加号码失败</string>
+   <string name="csst_safe_deletenumber_suc">删除号码成功</string>
+   <string name="csst_safe_deletenumber_fail">删除号码失败</string>
+   <string name="csst_safe_getnumber_suc">获取号码成功</string>
+   <string name="csst_safe_getnumber_fail">获取号码失败</string>
+   <string name="csst_safe_getnumber_null">未添加号码</string>
+   
+   <string name="csst_safe_arming">布防当中...</string>
+   <string name="csst_safe_disarming">撤防当中...</string>
+   <string name="csst_safe_addnumbering">添加号码当中...</string>
+   <string name="csst_safe_deletenumbering">删除号码当中...</string>
+   <string name="csst_safe_getnumbering">获取电话号码当中...</string>
+   
+   
+  
+
+   
+   
+   
+   
+   
+   
+   
+   <string name="csst_switch_diaodeng">吊灯</string>
+   <string name="csst_switch_bideng">壁灯</string>
+   <string name="csst_switch_caodeng">槽灯</string>
+   
+   <string name="csst_rc_table_tcl">TCL</string>
+   <string name="csst_rc_table_meide">美的</string>
+   <string name="csst_rc_table_xinfei">新飞</string>
+   <string name="csst_rc_table_hansen">海信</string>
+   <string name="csst_rc_table_haier">海尔</string>
+   <string name="csst_rc_table_xiaotianer">小天鹅</string>
+   <string name="csst_rc_table_meiling">美菱</string>
+   <string name="csst_rc_table_tozhi">东芝</string>
+   <string name="csst_rc_table_geli">格力</string>
+   <string name="csst_rc_table_changhong">长虹</string>
+   <string name="csst_rc_table_kangjia">康佳</string>
+   <string name="csst_rc_table_chuangwei">创维</string>
+    <string name="csst_rc_table_xiahua">夏华</string>
+   <string name="csst_rc_table_jingxing">金星</string>
+   <string name="csst_rc_table_xiongmao">熊猫</string>
+   <string name="csst_rc_table_sony">索尼</string>
+   <string name="csst_rc_table_songxia">松下</string>
+   <string name="csst_rc_table_sharp">夏普</string>
+   <string name="csst_rc_table_sanliang">三菱</string>
+   <string name="csst_rc_table_sunsung">三星</string>
+   <string name="csst_rc_table_sanyang">三洋</string>
+   <string name="csst_rc_table_LG">LG</string>
+   <string name="csst_rc_table_other">其他</string>
+   <string name="csst_rc_table_matching">正在匹配遥控器</string>
+   
+   <string name="csst_rc_table_title">安防设置</string>
+   <string name="csst_rc_key_notaction">该动作无法调用</string>
+   <string name="csst_devicemodify_devicename">设备名称</string>
+   <string name="csst_devicemodify_devicename_tipnull">设备名称不能为空</string>
+   <string name="csst_devicemodify_devicename_inputtip">请输入设备名称</string>
+   <string name="csst_device_exists_device">该房间已存在此设备！</string>
+   
+    <string name="csst_customkey_keyexist">该按键名称已经存在</string>
+    <string name="csst_customkey_title">自定义遥控器</string>
+    <string name="csst_safe_open">开启</string>
+    <string name="csst_safe_close">关闭</string>
+    <string name="csst_safe_sensor">传感器</string>
+    <string name="csst_suc">成功</string>
+    <string name="csst_fail">失败</string>
+    
+   <string name="csst_action_off">关</string>
+   <string name="csst_action_on">开</string>
+   <string name="csst_socket_title">智能插座</string>
+   
+   <string name="csst_searchswitch_fail">搜索设备失败...</string>
+   
+   <string name="csst_rc_memu">菜单</string>
+   
+   <string name="csst_rc_rctname">遥控器名称：</string>
+   <string name="csst_rc_custkeyname">按键名称：</string>
+   <string name="csst_rc_custkeygallery">按键图片：</string>
+   <string name="csst_rc_custkeystudycode">学码</string>
+   <string name="csst_rc_custkeystudyedit">编辑</string>
+   <string name="csst_adddevice_selectmodel">未对遥控模板进行选择</string>
+   
+   
+   <string name="csst_version">软件版本</string>
+   <string name="bangtip">确定绑定插座 </string> 
+   <string name="power_key_select">请选择POWER按键的状态</string>
+   <string name="csst_safe_clock">定时管理</string>
+   <string name="csst_safe_arm">设防</string>
+   <string name="csst_safe_disarm">撤防</string>
+   <string name="csst_safe_clocknamenametitle">定时名称：</string>
+   <string name="csst_safe_clocknametip">工作时间布防</string>
+   <string name="csst_safe_alarmstatue">报警状态：</string>
+   <string name="csst_safe_clockname">定时名称：</string>
+   
+   
+   
+   
+   
+   
+   <string name="csst_air_good">优</string>
+   <string name="csst_air_mid">良</string>
+   <string name="csst_air_bad">轻度</string>
+   <string name="csst_air_midbad">中度</string>
+   <string name="csst_air_verybad">重度</string>
+   
+   <string name="csst_jiaquan_gengzheng">甲醛较零</string>
+   <string name="csst_getstatus">正在获取数据...</string>
+    <string name="csst_timername">定时名称：</string>
+    <string name="csst_timernametip">工作时间布防</string>
+    
+     
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+	 
+	
+</resources>

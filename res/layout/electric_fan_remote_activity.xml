@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_background_color"
+    android:orientation="vertical" >
+
+
+    <ImageButton
+        android:id="@+id/btnPower"
+        android:layout_width="@dimen/small_round_btn_size"
+        android:layout_height="@dimen/small_round_btn_size"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:src="@drawable/power_switch" />
+
+    <Button
+        android:id="@+id/btnWind"
+        android:layout_width="@dimen/small_round_btn_size"
+        android:layout_height="@dimen/small_round_btn_size"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/blue_round_background"
+        android:src="@drawable/left_to_right_white"
+        android:text="风量"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+    
+    <Button
+        android:id="@+id/btnOscillating"
+        android:layout_width="@dimen/small_round_btn_size"
+        android:layout_height="@dimen/small_round_btn_size"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/blue_round_background"
+        android:src="@drawable/left_to_right_white"
+        android:text="摇头"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+    
+    <Button
+        android:id="@+id/btnTiming"
+        android:layout_width="@dimen/small_round_btn_size"
+        android:layout_height="@dimen/small_round_btn_size"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/blue_round_background"
+        android:src="@drawable/left_to_right_white"
+        android:text="定时"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+</LinearLayout>
