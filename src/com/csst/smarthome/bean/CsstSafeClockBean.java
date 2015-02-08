@@ -15,15 +15,22 @@ public class CsstSafeClockBean implements Serializable {
 	/** 定时ID */
 	private int mClockOpenId = 0;
 	
+	/*定时名称*/
+	private String mClockName = null;
+	
 	/** 定时时间小时 */
 	private int mClockOpenTimeHour ;
 	/** 定时时间分钟 */
 	private int mClockOpenTimeMin ;
+	
 
 	/** 定时键值 */
 	private int mClockOpenDay ;
 	/** mClockOpenopenFlag*/
 	private int mClockOpenopenFlag ;
+	
+	/** mClockOpenopenFlag*/
+	private int mClockArm ;
 	
 
 	public CsstSafeClockBean() {
@@ -38,13 +45,15 @@ public class CsstSafeClockBean implements Serializable {
  * @param mClockOpenAutoFlag
  * @param mClockOpenModelId
  */
-	public CsstSafeClockBean(int mClockOpenId, int mClockOpenDay,int mClockOpenTimeHour,
-			int mClockOpenTimeMin,int mClockOpenopenFlag) {
+	public CsstSafeClockBean(int mClockOpenId, String mClockName,int mClockOpenDay,int mClockOpenTimeHour,
+			int mClockOpenTimeMin,int mClockOpenopenFlag,int mClockArm) {
 		this.mClockOpenId = mClockOpenId;
+		this.mClockName = mClockName;
 		this.mClockOpenTimeHour = mClockOpenTimeHour;
 		this.mClockOpenTimeMin = mClockOpenTimeMin;
 		this.mClockOpenDay = mClockOpenDay;
 		this.mClockOpenopenFlag = mClockOpenopenFlag;
+		this.mClockArm = mClockArm;
 	}
 	/**
 	 * 用来插入一条数据时候用的
@@ -54,12 +63,14 @@ public class CsstSafeClockBean implements Serializable {
 	 * @param mClockOpenAutoFlag
 	 * @param mClockOpenModelId
 	 */
-	public CsstSafeClockBean(int mClockOpenDay, int mClockOpenTimeHour,
-			int mClockOpenTimeMin,int mClockOpenopenFlag) {
+	public CsstSafeClockBean(String mClockName,int mClockOpenDay, int mClockOpenTimeHour,
+			int mClockOpenTimeMin,int mClockOpenopenFlag,int mClockArm) {
+		this.mClockName = mClockName;
 		this.mClockOpenTimeHour = mClockOpenTimeHour;
 		this.mClockOpenTimeMin = mClockOpenTimeMin;
 		this.mClockOpenDay = mClockOpenDay;
 		this.mClockOpenopenFlag = mClockOpenopenFlag;
+		this.mClockArm = mClockArm;
 	}
 	
 
@@ -100,14 +111,30 @@ public class CsstSafeClockBean implements Serializable {
 		return mClockOpenopenFlag;
 	}
 
+	public String getmClockName() {
+		return mClockName;
+	}
+
+	public void setmClockName(String mClockName) {
+		this.mClockName = mClockName;
+	}
+
 	public void setmClockOpenopenFlag(int mClockOpenopenFlag) {
 		this.mClockOpenopenFlag = mClockOpenopenFlag;
 	}
 
+	public int getmClockArm() {
+		return mClockArm;
+	}
+
+	public void setmClockArm(int mClockArm) {
+		this.mClockArm = mClockArm;
+	}
+
 	@Override
 	public String toString() {
-		return   mClockOpenDay+ ")"+mClockOpenTimeHour + ")" 
-		+ mClockOpenTimeMin+ ")" + mClockOpenopenFlag;
+		return   mClockName+")"+mClockOpenDay+ ")"+mClockOpenTimeHour + ")" 
+		+ mClockOpenTimeMin+ ")" + mClockOpenopenFlag+")"+mClockArm;
 	}
 
 	

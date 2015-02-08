@@ -27,14 +27,20 @@ public class CsstSHSafeClockTable implements ICsstSHDaoManager<CsstSafeClockBean
 	public static final String GEN_ClockOpen_TIME_MIN = "sh_SafeClock_time_min";
 	/** 定时时间物理地址id*/
 	public static final String GEN_ClockOpen_OPENFLAG = "sh_SafeClock_openflag";
+	/** 定时时间物理地址id*/
+	public static final String GEN_ClockOpen_NAME = "sh_SafeClock_name";
+	/** 定时时间物理地址id*/
+	public static final String GEN_ClockOpen_ARM = "sh_SafeClock_arm";
 	
 	/** 建表SQL语句 */
 	public static String GEN_CREATE_TABLE = "CREATE TABLE IF NOT EXISTS " + GEN_TABLE_NAME
 			+ "(" + GEN_ClockOpen_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+			+ GEN_ClockOpen_NAME + " TEXT,"
 			+ GEN_ClockOpen_DAY + " INTEGER,"
 			+ GEN_ClockOpen_TIME_HOUR + " INTEGER,"
 			+ GEN_ClockOpen_TIME_MIN + " INTEGER,"
-			+ GEN_ClockOpen_OPENFLAG+ " INTEGER"
+			+ GEN_ClockOpen_OPENFLAG+ " INTEGER,"
+			+ GEN_ClockOpen_ARM+ " INTEGER"
 			+ ")";
 	/** 删除表 */
 	public static String GEN_DROP_TABLE = "DROP TABLE IF EXISTS " + CsstSHSafeClockTable.GEN_TABLE_NAME;
@@ -57,10 +63,12 @@ public class CsstSHSafeClockTable implements ICsstSHDaoManager<CsstSafeClockBean
 		System.out.println(" CsstSHClockOpenTable ClockOpen insert IN");
 		String table = GEN_TABLE_NAME;
 		ContentValues cv = new ContentValues();
+		cv.put(GEN_ClockOpen_NAME,arg0.getmClockName());
 		cv.put(GEN_ClockOpen_DAY,arg0.getmClockOpenDay());
 		cv.put(GEN_ClockOpen_TIME_HOUR, arg0.getmClockOpenTimeHour());
 		cv.put(GEN_ClockOpen_TIME_MIN, arg0.getmClockOpenTimeMin());
 		cv.put(GEN_ClockOpen_OPENFLAG, arg0.getmClockOpenopenFlag());
+		cv.put(GEN_ClockOpen_ARM,arg0.getmClockArm());
 		return db.insert(table, null, cv);
 	}
 	
@@ -71,10 +79,12 @@ public class CsstSHSafeClockTable implements ICsstSHDaoManager<CsstSafeClockBean
 		String whereClause = GEN_ClockOpen_ID + "=?";
 		String[] whereArgs = {Integer.toString(arg0.getmClockOpenId())};
 		ContentValues cv = new ContentValues();
+		cv.put(GEN_ClockOpen_NAME,arg0.getmClockName());
 		cv.put(GEN_ClockOpen_DAY,arg0.getmClockOpenDay());
 		cv.put(GEN_ClockOpen_TIME_HOUR, arg0.getmClockOpenTimeHour());
 		cv.put(GEN_ClockOpen_TIME_MIN, arg0.getmClockOpenTimeMin());
 		cv.put(GEN_ClockOpen_OPENFLAG, arg0.getmClockOpenopenFlag());
+		cv.put(GEN_ClockOpen_ARM,arg0.getmClockArm());
 		return db.update(table, cv, whereClause, whereArgs);
 	}
 	/**
@@ -120,15 +130,18 @@ public class CsstSHSafeClockTable implements ICsstSHDaoManager<CsstSafeClockBean
 			list = new ArrayList<CsstSafeClockBean>();
 			int clockOpenId; 
 			int clockOpenDay, clockOpenTimeHour,clockOpenTimeMin ;
-			int clockOpenOpenFlag;
+			int clockOpenOpenFlag,clockOpenArm;
+			String clockOpenname=null;
 			do{
 				clockOpenId = c.getInt(c.getColumnIndexOrThrow(GEN_ClockOpen_ID));
+				clockOpenname = c.getString(c.getColumnIndexOrThrow(GEN_ClockOpen_NAME));
+				clockOpenArm = c.getInt(c.getColumnIndexOrThrow(GEN_ClockOpen_ARM));
 				clockOpenDay = c.getInt(c.getColumnIndexOrThrow(GEN_ClockOpen_DAY));
 				clockOpenTimeHour = c.getInt(c.getColumnIndexOrThrow(GEN_ClockOpen_TIME_HOUR));
 				clockOpenTimeMin = c.getInt(c.getColumnIndexOrThrow(GEN_ClockOpen_TIME_MIN));
 				clockOpenOpenFlag  =c.getInt(c.getColumnIndexOrThrow(GEN_ClockOpen_OPENFLAG));
-				list.add(new CsstSafeClockBean(clockOpenId, clockOpenDay, clockOpenTimeHour,clockOpenTimeMin,
-						clockOpenOpenFlag));
+				list.add(new CsstSafeClockBean(clockOpenId,clockOpenname, clockOpenDay, clockOpenTimeHour,clockOpenTimeMin,
+						clockOpenOpenFlag,clockOpenArm));
 			}while(c.moveToNext());
 		}
 		c.close();

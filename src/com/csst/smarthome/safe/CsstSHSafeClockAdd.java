@@ -1,7 +1,6 @@
 package com.csst.smarthome.safe;
 
 import java.net.DatagramPacket;
-import java.util.List;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -25,12 +24,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.csst.smarthome.R;
-import com.csst.smarthome.bean.CsstSHActionBean;
 import com.csst.smarthome.bean.CsstSafeClockBean;
 import com.csst.smarthome.common.ICsstSHConstant;
 import com.csst.smarthome.common.ICsstSHInitialize;
 import com.csst.smarthome.dao.CsstSHDataBase;
-import com.csst.smarthome.dao.CsstSHModelTable;
 import com.csst.smarthome.dao.CsstSHSafeClockTable;
 import com.csst.smarthome.util.CsstSHConfigPreference;
 import com.csst.smarthome.util.NumericWheelAdapter;
@@ -90,7 +87,7 @@ public class CsstSHSafeClockAdd extends Activity implements ICsstSHInitialize, I
 	/**
 	 * 时间设置
 	 */
-	private TextView mTVtimesetting,mTVtimetap;
+	private TextView mTVtimesetting,mTVtimetap,etmodelname;
 	private LinearLayout lltimesetting;
 	/**
 	 * 星期几
@@ -168,7 +165,7 @@ public class CsstSHSafeClockAdd extends Activity implements ICsstSHInitialize, I
 		mrgbtn =(RadioGroup)findViewById(R.id.radioGroup);
 		
 		
-		
+		etmodelname = (TextView)findViewById(R.id.etmodelname);
 		lltimesetting =(LinearLayout) findViewById(R.id.lltimesetting);
 		hour = (WheelView) findViewById(R.id.hour);
 		hour.setLabel(getString(R.string.csst_model_hour));
@@ -198,6 +195,7 @@ public class CsstSHSafeClockAdd extends Activity implements ICsstSHInitialize, I
 			if(debug){
 				System.out.println(TAG+"the mbyteDay is  "+mbyteDay);
 			}
+			etmodelname.setText(modifyClockBean.getmClockName());
 			initDay();
 			//设定滚轮到指定的初始值
 			hour.setCurrentItem(modifyClockBean.getmClockOpenTimeHour());
@@ -457,14 +455,16 @@ public class CsstSHSafeClockAdd extends Activity implements ICsstSHInitialize, I
 		@Override
 		public void onClick(View v) {
 			//判断名字是否为空 重复时间是否选择
-			 if(mbyteDay==0x00){
+			if(etmodelname.getText().toString()==null){
+				Toast.makeText(CsstSHSafeClockAdd.this, R.string.csst_model_clocknamenulltip, Toast.LENGTH_LONG).show();;
+			}else if(mbyteDay==0x00){
 				Toast.makeText(CsstSHSafeClockAdd.this, R.string.csst_model_clockdaynulltip, Toast.LENGTH_LONG).show();;
 			}else{
 				//以modelname 查询到ID ，再用ID 查询，和名称查询在数据库中是否存在这个名字 在columnExistsbyname函数中是查询到这个model id 下的全部 定时数据 再看看这些数据中有没有一个跟传进去的
 				//clockOpenName 一样的，因为在clockOpentable 中存在不同的model 下的clockopen数据 
 //				if(CsstSHClockOpenTable.getInstance().columnExistsbyname(mDb,modelId,mEVtimename.getText().toString())){
 					if(meditFlag){//是修改的数据则根据已经有的ID更新数据
-						
+						modifyClockBean.setmClockName(etmodelname.getText().toString());
 						modifyClockBean.setmClockOpenDay(mbyteDay);
 						modifyClockBean.setmClockOpenTimeHour(hour.getCurrentItem());
 						modifyClockBean.setmClockOpenTimeMin(Min.getCurrentItem());
@@ -474,9 +474,9 @@ public class CsstSHSafeClockAdd extends Activity implements ICsstSHInitialize, I
 						//唯一识别号
 						sb.append(String.format("%02x", (byte)modifyClockBean.getmClockOpenId()));
 						sb.append(",");
-						sb.append("办公室");
+						sb.append(etmodelname.getText().toString());
 						sb.append(",");
-						sb.append(1);
+						sb.append(modifyClockBean.getmClockArm());
 						sb.append(",");
 						sb.append(String.format("%02x", (byte)hour.getCurrentItem()));
 						sb.append(",");
@@ -536,10 +536,12 @@ public class CsstSHSafeClockAdd extends Activity implements ICsstSHInitialize, I
 				}else{//插入数据
 					// 实例化ClockOpenBean 用来查数据库
 					CsstSafeClockBean clockOpenBean = new CsstSafeClockBean();
+					clockOpenBean.setmClockName(etmodelname.getText().toString());
 					clockOpenBean.setmClockOpenDay(mbyteDay);
 					clockOpenBean.setmClockOpenTimeHour(hour.getCurrentItem());
 					clockOpenBean.setmClockOpenTimeMin(Min.getCurrentItem());
 					clockOpenBean.setmClockOpenopenFlag(selectwho);
+					clockOpenBean.setmClockArm(1);
 //					 实例化ActionBean 插入数据库
 					int clockid =(int)CsstSHSafeClockTable.getInstance().insert(mDb, clockOpenBean);
 					
@@ -566,7 +568,7 @@ public class CsstSHSafeClockAdd extends Activity implements ICsstSHInitialize, I
 					//唯一识别号
 					sb.append(String.format("%02x", (byte)clockid));
 					sb.append(",");
-					sb.append("办公室");
+					sb.append(etmodelname.getText().toString());
 					sb.append(",");
 					sb.append(1);
 					sb.append(",");

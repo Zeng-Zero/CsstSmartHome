@@ -380,8 +380,8 @@ public class CsstSHDeviceManagerActivity extends Activity implements ICsstSHInit
 				//获取Camera数据
 				msgsafeclockbean = msgsafeclock[i].split("\\)");
 				
-				CsstSafeClockBean safeclock = new CsstSafeClockBean(Integer.parseInt(msgsafeclockbean[0]),Integer.parseInt(msgsafeclockbean[1]),
-						Integer.parseInt(msgsafeclockbean[2]),Integer.parseInt(msgsafeclockbean[3]));
+				CsstSafeClockBean safeclock = new CsstSafeClockBean(msgsafeclockbean[0],Integer.parseInt(msgsafeclockbean[1]),Integer.parseInt(msgsafeclockbean[2]),
+						Integer.parseInt(msgsafeclockbean[3]),Integer.parseInt(msgsafeclockbean[4]),Integer.parseInt(msgsafeclockbean[5]));
 				CsstSHSafeClockTable.getInstance().insert(mDb, safeclock);
 			}
 			break;
