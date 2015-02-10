@@ -302,7 +302,7 @@ public class SmartStartActivity extends SlidingActivity implements
 	protected void onRestart(){
 //		sendflag = true;
 //		new UpdateTempe().execute();
-//		System.out.println(TAG+"onRestart");
+		System.out.println(TAG+"onRestart");
 		super.onRestart();	
 	}
 	
@@ -532,13 +532,13 @@ public class SmartStartActivity extends SlidingActivity implements
 				// TODO Auto-generated method stub
 				if(air_flag==0){
 					air_been.setBackgroundDrawable((SmartStartActivity.this.getResources().getDrawable(R.drawable.air_been_open)));
-					new sendAirBeen((byte)0x01).cancel(true);
-					new sendAirBeen((byte)0x01).execute();
+					new sendAirBeen((byte)0x00).cancel(true);
+					new sendAirBeen((byte)0x00).execute();
 					air_flag = 1;
 				}else{
 					air_been.setBackgroundDrawable((SmartStartActivity.this.getResources().getDrawable(R.drawable.air_been_off)));
-					new sendAirBeen((byte)0x00).cancel(true);
-					new sendAirBeen((byte)0x00).execute();
+					new sendAirBeen((byte)0x01).cancel(true);
+					new sendAirBeen((byte)0x01).execute();
 					air_flag = 0;
 				}
 				

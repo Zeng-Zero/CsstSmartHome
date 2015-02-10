@@ -7,6 +7,7 @@ import java.util.List;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
@@ -78,7 +79,7 @@ public class CsstSHDeviceManagerActivity extends Activity implements ICsstSHInit
 	private boolean isContinue = true;
 	private dataOutListener dataOutListener  = null;
 	private dataInListener dataInListener =null;
-	
+	ProgressDialog myprogress;
 	//定义获取字符串buffer 
 	StringBuffer sbSendBuffer = new StringBuffer();
 	
@@ -783,6 +784,7 @@ public class CsstSHDeviceManagerActivity extends Activity implements ICsstSHInit
   		@Override
   		protected void onPreExecute() {
   			super.onPreExecute();
+  			LoadProcess_fisrt();
   		}
   		@Override
   		protected Boolean doInBackground(Void... params) {
@@ -848,13 +850,26 @@ public class CsstSHDeviceManagerActivity extends Activity implements ICsstSHInit
   			else{
   				
   			}
-  			
+			if(myprogress!=null)
+				myprogress.cancel();
   			Log.d(TAG,"Updatesenddebugcmdmianban start to sleep for wait");
   			return true;
   		}
 
   		
   	}
+	
+	public void  LoadProcess_fisrt() {
+		if(myprogress!=null){
+			myprogress.cancel();
+		}
+		myprogress = new ProgressDialog(this);
+		myprogress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+		myprogress.setMessage(getResources().getString(R.string.csst_send_cmd));
+		myprogress.setIndeterminate(false);
+		myprogress.setCancelable(true);
+		myprogress.show();
+	}
     
 	
 	

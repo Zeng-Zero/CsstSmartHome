@@ -806,9 +806,7 @@ public class CsstSHSaftListView extends Activity implements ICsstSHInitialize, I
 			   timerdelaygetstatu.cancel();  
 	            timerdelaygetstatu = null;  
 	        }  
-			if(myprogress!=null){
-				myprogress.dismiss();
-			}
+			
 			//先停止原来来定时器 因为两个共用一个定时器 如果不先取消原来的定时器的话就会造成错乱
 			stopTimer();
 			startTimer();
@@ -837,8 +835,15 @@ public class CsstSHSaftListView extends Activity implements ICsstSHInitialize, I
 						sendsensortomain[0]=(byte)0x00;
 						new sendSensortoMain((byte)0x01,sendsensortomain).cancel(true);//默认UTF8
 						new sendSensortoMain((byte)0x01,sendsensortomain).execute();//默认UTF8
+					}else{
+						if(myprogress!=null){
+							myprogress.dismiss();
+						}
 					}
 					
+				}
+				if(myprogress!=null){
+					myprogress.dismiss();
 				}
 			}
 			
@@ -917,6 +922,7 @@ public class CsstSHSaftListView extends Activity implements ICsstSHInitialize, I
   						Log.d(TAG,TAG+ "content " + i + " value: " + bcmrcv.getContentBuf()[i]);
   					}
   				}
+  				if(myprogress!=null)
   				myprogress.dismiss();
   				Log.d(TAG,"sendSensortoMain get messega finish ");
   				//先停止原来来定时�?因为两个共用一个定时器 如果不先取消原来的定时器的话就会造成错乱
