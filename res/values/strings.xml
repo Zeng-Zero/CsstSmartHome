@@ -695,7 +695,7 @@
    
    <!-- safe -->
    <string name="csst_safe_title">安防设置</string>
-   <string name="csst_safe_search">搜索传感设备</string>
+   <string name="csst_safe_search">传感</string>
    <string name="csst_safe_smoke">烟雾</string>
    <string name="csst_safe_door">门磁</string>
    <string name="csst_safe_hr">热红外</string>
@@ -805,7 +805,7 @@
    <string name="csst_version">软件版本</string>
    <string name="bangtip">确定绑定插座 </string> 
    <string name="power_key_select">请选择POWER按键的状态</string>
-   <string name="csst_safe_clock">定时管理</string>
+   <string name="csst_safe_clock">定时布防设置</string>
    <string name="csst_safe_arm">设防</string>
    <string name="csst_safe_disarm">撤防</string>
    <string name="csst_safe_clocknamenametitle">定时名称：</string>
@@ -828,7 +828,7 @@
    <string name="csst_getstatus">正在获取数据...</string>
     <string name="csst_timername">定时名称：</string>
     <string name="csst_timernametip">工作时间布防</string>
-    
+    <string name="csst_safe_been">联动警笛</string>
      
    
    

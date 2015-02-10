@@ -34,13 +34,23 @@ public class CasstSHCamera {
 		mTVCameraUuid = (TextView) mView.findViewById(R.id.mTVCameraUuid);
 		mTVCameraState = (TextView) mView.findViewById(R.id.mTVCameraState);
 		mIVLastFrame.setImageResource(R.drawable.csst_preset_030);
-		mTVCameraName.setText(mCameraBean.getCameraName());
-		mTVCameraUuid.setText(mCameraBean.getCameraUuid());
-		mTVCameraState.setText(cameraState(mContext, mCameraState));
 		mView.setTag(this);
 	}
 	
+	public final void updateCameraBean(CsstSHCameraBean mCameraBean){
+		this.mCameraBean = mCameraBean;
+		updateCameraState();
+	}
+	
+	public final void updateCameraState(){
+		mTVCameraName.setText(mCameraBean.getCameraName());
+		mTVCameraUuid.setText(mCameraBean.getCameraUuid());
+		mTVCameraState.setText(cameraState(mContext, mCameraState));
+		mTVCameraUuid.setTag(mCameraBean.getCameraUuid());
+	}
+	
 	public final View getCameraView(){
+		updateCameraState();
 		return mView;
 	}
 	

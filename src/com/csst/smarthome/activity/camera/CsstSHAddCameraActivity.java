@@ -197,6 +197,7 @@ public class CsstSHAddCameraActivity extends Activity implements
 	
 	@Override
 	public void onBackPressed() {
+		setResult(Activity.RESULT_CANCELED);
 		backEvent();
 		super.onBackPressed();
 	}
@@ -317,6 +318,7 @@ public class CsstSHAddCameraActivity extends Activity implements
 			}else{
 				mETPassword.setInputType(InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_VARIATION_PASSWORD);
 			}
+			mETPassword.setSelection(mETPassword.getText().toString().trim().length());
 		}
 	}
 	
@@ -429,7 +431,10 @@ public class CsstSHAddCameraActivity extends Activity implements
 				mModifyCamera.setCameraPassword(pswd);
 				mCameraTable.update(mDb, mModifyCamera);
 			}
-			//返回到摄像机列表界面
+			//setResult(Activity.RESULT_OK);
+			Intent intent = new Intent();
+			intent.putExtra("camerabean", mModifyCamera);
+			setResult(Activity.RESULT_OK, intent);
 			backEvent();
 		}
 	}
@@ -441,6 +446,7 @@ public class CsstSHAddCameraActivity extends Activity implements
 	private final class BackBtnListener implements View.OnClickListener{
 		@Override
 		public void onClick(View v) {
+			setResult(Activity.RESULT_CANCELED);
 			backEvent();
 		}
 	}

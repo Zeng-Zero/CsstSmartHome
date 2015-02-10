@@ -7,7 +7,7 @@
     android:id="@+id/addDeviceContent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/black" >
+    android:background="@color/currentbackground" >
 	<!-- 标题栏 -->
 	<RelativeLayout 
 		android:id="@+id/layout_top"

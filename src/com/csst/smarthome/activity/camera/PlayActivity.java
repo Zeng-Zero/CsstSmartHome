@@ -48,6 +48,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
@@ -345,6 +346,7 @@ public class PlayActivity extends Activity implements OnTouchListener,
 			}
 			if (!isPTZPrompt) {
 				isPTZPrompt = true;
+				//请按菜单键,进行云台控制
 				showToast(R.string.ptz_control);
 			}
 
@@ -352,39 +354,54 @@ public class PlayActivity extends Activity implements OnTouchListener,
 			case 1: // h264
 			{
 				byte[] rgb = new byte[nVideoWidths * nVideoHeights * 2];
-				NativeCaller.YUV4202RGB565(videodata, rgb, nVideoWidths,
-						nVideoHeights);
+				NativeCaller.YUV4202RGB565(videodata, rgb, nVideoWidths, nVideoHeights);
 				ByteBuffer buffer = ByteBuffer.wrap(rgb);
 				rgb = null;
 				/* ByteBuffer buffer = ByteBuffer.wrap(videodata); */
-				mBmp = Bitmap.createBitmap(nVideoWidths, nVideoHeights,
-						Bitmap.Config.RGB_565);
+				mBmp = Bitmap.createBitmap(nVideoWidths, nVideoHeights, Bitmap.Config.RGB_565);
 				mBmp.copyPixelsFromBuffer(buffer);
-				int width = getWindowManager().getDefaultDisplay().getWidth();
-				int height = getWindowManager().getDefaultDisplay().getHeight();
-				
 				
 				vidoeView.setVisibility(View.GONE);
 				Bitmap bitmap = null;
+				int bw = mBmp.getWidth();
+				int bh = mBmp.getHeight();
+				int x = 0;
+				int y = 0;
+				int w = bw;
+				int h = bh;
+				//竖屏4:3，横屏16:9
+				Matrix m = new Matrix();
+				float sx = 1f;
+				float sy = 1f;
 				if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
 					FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(
-							nVideoWidths, nVideoHeights * 3 / 4);
+							FrameLayout.LayoutParams.FILL_PARENT, sheight * 3 / 4);
 					lp.gravity = Gravity.CENTER;
 					myGlSurfaceView.setLayoutParams(lp);
-					bitmap = Bitmap.createScaledBitmap(mBmp, 320,
-							240, true);
+					if (bw / bh == 4 / 3){
+						sx = 1;
+						sy = 2;
+					}else{
+						sx = (float) ((float)bw / (float)swidth);
+						sy = (float) ((float)bh / ((float)sheight * 3f / 4f));
+					}
+					//bitmap = Bitmap.createScaledBitmap(mBmp, 320, 240, true);
 					Log.i("info", "竖屏");
+					videoViewStandard.setScaleType(ScaleType.FIT_CENTER);
 					
 				} else if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
 					FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(
-							width, height);
+							swidth, sheight);
 					lp.gravity = Gravity.CENTER;
 					myGlSurfaceView.setLayoutParams(lp);
-					bitmap = Bitmap
-							.createScaledBitmap(mBmp, width, height, true);
+					//bitmap = Bitmap.createScaledBitmap(mBmp, swidth, sheight, true);
+					sx = (float) ((float)bw / (float)sheight);
+					sy = (float) ((float)bh / (sheight * 9f / 16f));
 					Log.i("info", "横屏");
+					videoViewStandard.setScaleType(ScaleType.FIT_XY);
 				}
-				
+				m.setScale(sx, sy);
+				bitmap = Bitmap.createBitmap(mBmp, x, y, w, h, m, true);
 //				myRender.writeSample(videodata, nVideoWidth, nVideoHeight);
 //				videoViewStandard.setVisibility(View.GONE);
 //				vidoeView.setImageBitmap(mBmp);
@@ -563,6 +580,11 @@ public class PlayActivity extends Activity implements OnTouchListener,
 		}
 	};
 
+	/** 屏幕宽 */
+	private static int swidth = 0;
+	/** 屏幕高 */
+	private static int sheight = 0;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -571,6 +593,9 @@ public class PlayActivity extends Activity implements OnTouchListener,
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.play);
+		
+		swidth = getWindowManager().getDefaultDisplay().getWidth();
+		sheight = getWindowManager().getDefaultDisplay().getHeight();
 		
 		mCamera = (CsstSHCameraBean) getIntent().getSerializableExtra("camera");
 		

@@ -44,9 +44,9 @@ public final class CsstContextUtil {
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View view = inflater.inflate(R.layout.csst_signal_view, null);
 		ImageView mIVSignal = (ImageView) view.findViewById(R.id.mIVSignal);
-		if(message.equals(context.getString(R.string.csst_safe_search_sensor))){
+		if(null != message &&message.equals(context.getString(R.string.csst_safe_search_sensor))){
 			mIVSignal.setBackgroundResource(R.anim.csst_safesearch);
-		}else if(message.equals(context.getString(R.string.csst_study_code_message))){
+		}else if(null != message &&message.equals(context.getString(R.string.csst_study_code_message))){
 			mIVSignal.setBackgroundResource(R.anim.csst_studycode);
 		}else{
 			mIVSignal.setBackgroundResource(R.anim.csst_researchdevice);

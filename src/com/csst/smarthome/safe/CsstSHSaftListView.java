@@ -60,7 +60,7 @@ public class CsstSHSaftListView extends Activity implements ICsstSHInitialize, I
 	/** 完成按钮 */
 	private Button mBtnDone = null;
 	/** 标题 */
-	private TextView mTVTitle = null;
+	private TextView mBtnaddaction ,mTVTitle = null;
 	/** 动作列表 */
 	private ListView mlistSensor = null;
 	/** 动作数据 */
@@ -72,7 +72,7 @@ public class CsstSHSaftListView extends Activity implements ICsstSHInitialize, I
 	/** 动作配器 */
 	private CsstSHActionAdapter actionAdapter = null;
 	/** 情景模式名称标签 */
-	private Button mBtnaddaction ,mbtnmanusetting,mbtnautosetting,mbtnaddnumber,mbtndeletenumber,mbtnGetnumer,mbtnsafeclock;
+	private Button mbtnmanusetting,mbtnautosetting,mbtnaddnumber,mbtndeletenumber,mbtnGetnumer,mbtnsafeclock;
 	private EditText metaddnumber,metdeletenumber;
 	private ListView listviewNumber = null;
 	
@@ -283,7 +283,7 @@ public class CsstSHSaftListView extends Activity implements ICsstSHInitialize, I
 		mTVTitle = (TextView) findViewById(R.id.mTVsafeTitle);
 		mBtnDone = (Button) findViewById(R.id.mBtnsafeDone);
 		mlistSensor = (ListView) findViewById(R.id.lv_sensorlistview);
-		mBtnaddaction = (Button) findViewById(R.id.btnsafeaddaction);
+		mBtnaddaction = (TextView) findViewById(R.id.btnsafeaddaction);
 		mbtnmanusetting = (Button) findViewById(R.id.btnsafemansetting);
 		mbtnautosetting = (Button) findViewById(R.id.btnsafeautosetting);
 		mbtnaddnumber = (Button) findViewById(R.id.btnsafeaddnumber);

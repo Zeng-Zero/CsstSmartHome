@@ -8,12 +8,16 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.ProgressDialog;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.IBinder;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
@@ -25,9 +29,9 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.csst.smarthome.R;
+import com.csst.smarthome.activity.camera.CameraConnectService.ICameraStateChangeListener;
 import com.csst.smarthome.bean.CsstSHCameraBean;
 import com.csst.smarthome.camera.BridgeService;
 import com.csst.smarthome.camera.BridgeService.IpcamClientInterface;
@@ -36,26 +40,40 @@ import com.csst.smarthome.common.ICsstSHConstant;
 import com.csst.smarthome.common.ICsstSHInitialize;
 import com.csst.smarthome.dao.CsstSHCameraTable;
 import com.csst.smarthome.dao.CsstSHDataBase;
-import com.csst.smarthome.util.CsstContextUtil;
 
 /**
  * 视频监控列表
  * @author liuyang
  */
 public class CsstSHCameraActivity extends Activity implements
-		ICsstSHInitialize, ICsstSHConstant {
+		ICsstSHInitialize, ICsstSHConstant, ICameraStateChangeListener {
 
 	public static final String TAG = "CsstSHCameraActivity";
-	private static final String STR_DID = "did";
-	private static final String STR_MSG_PARAM = "msgparam";
+	
+	public static final String STR_DID = "did";
+	public static final String STR_MSG_PARAM = "msgparam";
+	
+	/** 添加Camera请求Code */
+	public static final int ADD_CAMERA_REQUEST_CODE = 0x00;
+	/** 修改Camera请求Code */
+	public static final int UPDATE_CAMERA_REQUEST_CODE = 0x01;
+	
+	/** 返回按钮 */
 	private Button mBtnCancel = null;
+	/** 标题栏 */
 	private TextView mTVTitle = null;
+	/** 完成 */
 	private Button mBtnDone = null;
+	/** 添加Camera */
 	private Button mBtnAddCamera = null;
+	/** Camera列表 */
 	private ListView mLVCameras = null;
 	
+	/** 添加Camera按钮监听器 */
 	private AddCameraBtnListener mAddCameraBtnListener = null;
+	/** 返回按钮监听器 */
 	private BackBtnListener mBackBtnListener = null;
+	/** 相机列表监听器 */
 	private CameraListener mCameraListener = null;
 	
 	/** 数据库实例化 */
@@ -68,22 +86,19 @@ public class CsstSHCameraActivity extends Activity implements
 	private CameraAdpter mAdpter = null;
 	/** 摄像机列表 */
 	private List<CasstSHCamera> mCameras = null;
-	/** 是否搜索中 */
-	private boolean isConnecting = false;
-	/** 连接对话框 */
-	private Dialog mConnectDialog = null;
+	/** 连接服务 */
+	private CameraConnectService mConnectService = null;
+	/** 加载对话框 */
+	private ProgressDialog mLoadDialog = null;
+	/** 当前正在修改的Camera */
+	private CasstSHCamera mCurModifyCamera = null;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		bindService(new Intent(this, CameraConnectService.class), connection, Context.BIND_AUTO_CREATE);
+		mLoadDialog = ProgressDialog.show(this, "", getString(R.string.connecting), true, true);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.csst_camera_layout);
-		initDataSource();
-		initWidget();
-		initWidgetState();
-		initWidgetListener();
-		addWidgetListener();
-		mCameras = cameraInfoToView(CsstSHCameraActivity.this, mCameraTable.query(mDb));
-		mAdpter.setCameras(mCameras);
 	}
 	
 	@Override
@@ -128,6 +143,18 @@ public class CsstSHCameraActivity extends Activity implements
 		mLVCameras.setOnItemLongClickListener(mCameraListener);
 	}
 	
+	@Override
+	public void cameraState(String cameraUid, int cameraState) {
+		mAdpter.notifyDataSetInvalidated();
+	}
+	
+	/**
+	 * 通知后台服务，Camera源变动
+	 */
+	private final void notifyCameraSourceChanged(){
+		sendBroadcast(new Intent(CameraConnectService.CAMERA_SOURCE_CHANGED_ACTION));
+	}
+	
 	private final void modifyAndSetCameraOption(final CsstSHCameraBean camera){
 		AlertDialog.Builder builder = new AlertDialog.Builder(CsstSHCameraActivity.this);
 		builder.setTitle(camera.getCameraName());
@@ -135,7 +162,7 @@ public class CsstSHCameraActivity extends Activity implements
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				switch (which) {
-					//修改
+					//设置
 					case 0:
 						Intent intent1 = new Intent(CsstSHCameraActivity.this, SettingWifiActivity.class);
 						intent1.putExtra("camera", camera);
@@ -147,13 +174,16 @@ public class CsstSHCameraActivity extends Activity implements
 					case 1:
 						Intent intent = new Intent(CsstSHCameraActivity.this, CsstSHAddCameraActivity.class);
 						intent.putExtra("camera", camera);
-						startActivity(intent);
+						//startActivity(intent);
+						startActivityForResult(intent, UPDATE_CAMERA_REQUEST_CODE);
 						break;
 					// 删除
 					case 2:
 						mCameraTable.delete(mDb, camera);
 						mCameras = cameraInfoToView(CsstSHCameraActivity.this, mCameraTable.query(mDb));
 						mAdpter.setCameras(mCameras);
+						//通知后台服务，Camera源变动
+						notifyCameraSourceChanged();
 						break;
 				}
 			}
@@ -174,13 +204,16 @@ public class CsstSHCameraActivity extends Activity implements
 					case 0:
 						Intent intent = new Intent(CsstSHCameraActivity.this, CsstSHAddCameraActivity.class);
 						intent.putExtra("camera", camera);
-						startActivity(intent);
+						//startActivity(intent);
+						startActivityForResult(intent, UPDATE_CAMERA_REQUEST_CODE);
 						break;
 					// 删除
 					case 1:
 						mCameraTable.delete(mDb, camera);
 						mCameras = cameraInfoToView(CsstSHCameraActivity.this, mCameraTable.query(mDb));
 						mAdpter.setCameras(mCameras);
+						//通知后台服务，Camera源变动
+						notifyCameraSourceChanged();
 						break;
 				}
 			}
@@ -190,9 +223,37 @@ public class CsstSHCameraActivity extends Activity implements
 		d.setCanceledOnTouchOutside(true);
 	}
 	
+	/**
+	 * 加载Camera列表
+	 */
+	private final void loadCameraList(){
+		mCameras = cameraInfoToView(CsstSHCameraActivity.this, mCameraTable.query(mDb));
+		mAdpter.setCameras(mCameras);
+	}
+	
 	@Override
-	protected void onResume() {
-		super.onResume();
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		switch (requestCode) {
+			case ADD_CAMERA_REQUEST_CODE:
+				if (Activity.RESULT_OK == resultCode){
+					loadCameraList();
+					//通知后台服务，Camera源变动
+					notifyCameraSourceChanged();
+				}
+				break;
+				
+			case UPDATE_CAMERA_REQUEST_CODE:
+				if (Activity.RESULT_OK == resultCode && null != data){
+					CsstSHCameraBean camerabean = (CsstSHCameraBean) data.getSerializableExtra("camerabean");
+					if (null != camerabean){
+						mCurModifyCamera.updateCameraBean(camerabean);
+					}
+				}
+				break;
+			default:
+				super.onActivityResult(requestCode, resultCode, data);
+				break;
+		}
 	}
 	
 	/**
@@ -210,10 +271,12 @@ public class CsstSHCameraActivity extends Activity implements
 	
 	@Override
 	protected void onDestroy() {
+		mConnectService.setCameraStateChangeListener(null);
+		unbindService(connection);
 		super.onDestroy();
 	}
 	
-	private static final List<CasstSHCamera> cameraInfoToView(Context context, List<CsstSHCameraBean> beans){
+	public static final List<CasstSHCamera> cameraInfoToView(Context context, List<CsstSHCameraBean> beans){
 		List<CasstSHCamera> cameras = new ArrayList<CasstSHCamera>();
 		if (null == beans){
 			return cameras;
@@ -226,6 +289,30 @@ public class CsstSHCameraActivity extends Activity implements
 		}
 		return cameras;
 	}
+	
+	private final ServiceConnection connection = new ServiceConnection() {
+		
+		@Override
+		public void onServiceDisconnected(ComponentName arg0) {
+			
+		}
+		
+		@Override
+		public void onServiceConnected(ComponentName arg0, IBinder arg1) {
+			mConnectService = ((CameraConnectService.ConnectServiceBinder) arg1).getCameraConnectService();
+			mConnectService.setCameraStateChangeListener(CsstSHCameraActivity.this);
+			initDataSource();
+			initWidget();
+			initWidgetState();
+			initWidgetListener();
+			addWidgetListener();
+			loadCameraList();
+			if (null != mLoadDialog && mLoadDialog.isShowing()){
+				mLoadDialog.dismiss();
+				mLoadDialog = null;
+			}
+		}
+	};
 	
 	@SuppressLint("HandlerLeak")
 	private Handler PPPPMsgHandler = new Handler(){
@@ -240,6 +327,7 @@ public class CsstSHCameraActivity extends Activity implements
 			switch (msgType) {
 				case ContentCommon.PPPP_MSG_TYPE_PPPP_STATUS:
 					camera.setCameraState(msgParam);
+					mConnectService.setCameraState(did, msgParam);
 					//在线
 					if (msgParam == ContentCommon.PPPP_STATUS_ON_LINE) {
 						NativeCaller.PPPPGetSystemParams(did,
@@ -253,14 +341,11 @@ public class CsstSHCameraActivity extends Activity implements
 							|| msgParam == ContentCommon.PPPP_STATUS_CONNECT_ERRER) {
 						NativeCaller.StopPPPP(did);
 					}
-					mConnectDialog.dismiss();
-					isConnecting = false;
 					break;
 	
 				default:
 					break;
 			}
-			
 		}
 	};
 	
@@ -273,64 +358,42 @@ public class CsstSHCameraActivity extends Activity implements
 		@Override
 		public boolean onItemLongClick(AdapterView<?> parent, View view,
 				int position, long id) {
-			if (isConnecting){
-				Toast.makeText(CsstSHCameraActivity.this, R.string.csst_camera_connecting, Toast.LENGTH_LONG).show();
-				return false;
-			}
 			CasstSHCamera ci = (CasstSHCamera) view.getTag();
-			CsstSHCameraBean camera = ci.getCameraBean();
-			if (!ci.isOnLine()){
+			mCurModifyCamera = ci;
+			CsstSHCameraBean camera = mCameraTable.query(mDb, ci.getCameraBean().getCameraId());
+			if (!mConnectService.cameraIsOnLine(ci.getCameraBean().getCameraUuid())){
 				modifyCameraOption(camera);
 			}else{
 				modifyAndSetCameraOption(camera);
 			}
-			return false;
+			return true;
 		}
 
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position,
 				long id) {
-			if (isConnecting){
-				Toast.makeText(CsstSHCameraActivity.this, R.string.csst_camera_connecting, Toast.LENGTH_LONG).show();
-				return;
-			}
-			CasstSHCamera ci = (CasstSHCamera) view.getTag();
-			CsstSHCameraBean camera = ci.getCameraBean();
-			if (!ci.isOnLine()){
-				Context context = CsstSHCameraActivity.this;
-				AlertDialog.Builder builder = new AlertDialog.Builder(context);
-				builder.setMessage(R.string.csst_camera_offline);
-				builder.setNegativeButton(R.string.csst_cancel, null);
-				builder.setPositiveButton(R.string.csst_ok, new StartConnectCallback(ci));
-				builder.show();
-				return;
-			}
-			//进入预览
-			Intent intent = new Intent(CsstSHCameraActivity.this, PlayActivity.class);
-			intent.putExtra("camera", camera);
-			startActivity(intent);
-		}
-	}
-	
-	/**
-	 * 启动连接按钮监听器
-	 * @author liuyang
-	 */
-	private final class StartConnectCallback implements DialogInterface.OnClickListener{
-		
-		private CasstSHCamera camera = null;
-		
-		public StartConnectCallback(CasstSHCamera camera) {
-			this.camera = camera;
-		}
-
-		@Override
-		public void onClick(DialogInterface dialog, int which) {
-			//搜索回调
-			BridgeService.setIpcamClientInterface(new ConnectCallback(camera));
-			new StartPPPPThread(camera.getCameraBean()).start();
-			mConnectDialog = CsstContextUtil.searchDialog(CsstSHCameraActivity.this, null, null, null);
-			mConnectDialog.show();
+			final CasstSHCamera ci = (CasstSHCamera) view.getTag();
+			new Thread(new Runnable() {
+				@Override
+				public void run() {
+					//CsstSHCameraBean camera = ci.getCameraBean();
+					//数据库中重新拉取Camera数据
+					CsstSHCameraBean camera = mCameraTable.query(mDb, ci.getCameraBean().getCameraId());
+					//camera不在线，停止camera
+					if (!mConnectService.cameraIsOnLine(ci.getCameraBean().getCameraUuid())){
+						//停止Camera连接
+						NativeCaller.StopPPPP(ci.getCameraBean().getCameraUuid());
+						//搜索回调
+						BridgeService.setIpcamClientInterface(new ConnectCallback(ci));
+						new StartPPPPThread(camera).start();
+						return;
+					}
+					//进入预览
+					Intent intent = new Intent(CsstSHCameraActivity.this, PlayActivity.class);
+					intent.putExtra("camera", camera);
+					startActivity(intent);
+				}
+			}).start();
 		}
 	}
 	
@@ -352,9 +415,6 @@ public class CsstSHCameraActivity extends Activity implements
 			bd.putString(STR_DID, did);
 			msg.setData(bd);
 			PPPPMsgHandler.sendMessage(msg);
-			/*if (type == ContentCommon.PPPP_MSG_TYPE_PPPP_STATUS && param == 2) {
-				//相机断线
-			}*/
 		}
 
 		@Override
@@ -380,7 +440,7 @@ public class CsstSHCameraActivity extends Activity implements
 		private CsstSHCameraBean cameraBean = null;
 		
 		public StartPPPPThread(CsstSHCameraBean cameraBean) {
-			this.cameraBean = cameraBean;
+			this.cameraBean = mCameraTable.query(mDb, cameraBean.getCameraId());
 		}
 
 		@Override
@@ -404,7 +464,8 @@ public class CsstSHCameraActivity extends Activity implements
 		@Override
 		public void onClick(View v) {
 			Intent inent = new Intent(CsstSHCameraActivity.this, CsstSHAddCameraActivity.class);
-			startActivity(inent);
+			//startActivity(inent);
+			startActivityForResult(inent, ADD_CAMERA_REQUEST_CODE);
 		}
 	}
 	
@@ -456,6 +517,9 @@ public class CsstSHCameraActivity extends Activity implements
 
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
+			if (null != mConnectService){
+				mCameras.get(position).setCameraState(mConnectService.cameraState(mCameras.get(position).getCameraBean().getCameraUuid()));
+			}
 			return mCameras.get(position).getCameraView();
 		}
 		
